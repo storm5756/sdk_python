@@ -161,8 +161,6 @@ class JsonAdapter(Generic[T]):
 
             if value_specs is not None:
                 dict_deserialized[value_specs.name] = cls._deserialize_value(value_specs.types, dict_[key])
-            else:
-                cls._warn_key_unknown(cls_context, key)
 
         return dict_deserialized
 
@@ -286,12 +284,7 @@ class JsonAdapter(Generic[T]):
 
         return list_deserialized
 
-    @classmethod
-    def _warn_key_unknown(cls,
-                          cls_context: Type[T],
-                          key: str) -> None:
-        context_name = cls_context.__name__
-        warnings.warn(cls._WARNING_KEY_UNKNOWN.format(key, context_name))
+
 
     @classmethod
     def _fill_default_values(cls,

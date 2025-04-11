@@ -7,8 +7,7 @@ from bunq.sdk.context.api_context import ApiContext
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.http.api_client import ApiClient
-from bunq.sdk.model.generated.endpoint import MonetaryAccountBank, RequestInquiry, AttachmentPublic, Avatar, \
-    CashRegister
+from bunq.sdk.model.generated.endpoint import MonetaryAccountBank, RequestInquiry, AttachmentPublic, Avatar
 from bunq.sdk.model.generated.object_ import Amount, Pointer
 from bunq.sdk.util import util
 
@@ -16,7 +15,6 @@ from bunq.sdk.util import util
 class BunqSdkTestCase(unittest.TestCase):
     """
     :type _second_monetary_account: MonetaryAccountBank
-    :type _cash_register: CashRegister
     """
 
     # Error constants.
@@ -41,9 +39,6 @@ class BunqSdkTestCase(unittest.TestCase):
     __SPENDING_MONEY_RECIPIENT = 'sugardaddy@bunq.com'
     __REQUEST_SPENDING_DESCRIPTION = 'sdk  python test, thanks daddy <3'
 
-    __CASH_REGISTER_STATUS = 'PENDING_APPROVAL'
-    __CASH_REGISTER_DESCRIPTION = 'python test cash register'
-
     __SECOND_MONETARY_ACCOUNT_DESCRIPTION = 'test account python'
 
     _EMAIL_BRAVO = 'bravo@bunq.com'
@@ -51,7 +46,6 @@ class BunqSdkTestCase(unittest.TestCase):
     __TIME_OUT_AUTO_ACCEPT_SPENDING_MONEY = 0.5
 
     _second_monetary_account = None
-    _cash_register = None
 
     @classmethod
     def setUpClass(cls):
@@ -88,12 +82,6 @@ class BunqSdkTestCase(unittest.TestCase):
             self._second_monetary_account.id_
         )
 
-    def _get_cash_register_id(self):
-        if self._cash_register is None:
-            self._set_cash_register()
-
-        return self._cash_register.id_
-
     @classmethod
     def _get_api_context(cls) -> ApiContext:
         return util.automatic_sandbox_install()
@@ -107,23 +95,6 @@ class BunqSdkTestCase(unittest.TestCase):
     @staticmethod
     def _get_directory_test_root():
         return os.path.dirname(os.path.abspath(__file__))
-
-    def _set_cash_register(self):
-        attachment_uuid = AttachmentPublic.create(
-            self._attachment_contents,
-            {
-                ApiClient.HEADER_CONTENT_TYPE: self._CONTENT_TYPE,
-                ApiClient.HEADER_ATTACHMENT_DESCRIPTION: self._ATTACHMENT_DESCRIPTION,
-            }
-        )
-        avatar_uuid = Avatar.create(attachment_uuid.value)
-        cash_register_id = CashRegister.create(
-            self.__CASH_REGISTER_DESCRIPTION,
-            self.__CASH_REGISTER_STATUS,
-            avatar_uuid.value
-        )
-
-        self._cash_register = CashRegister.get(cash_register_id.value)
 
     @property
     def _attachment_contents(self) -> AnyStr:

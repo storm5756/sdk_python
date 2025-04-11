@@ -1509,6 +1509,161 @@ class Geolocation(BunqModel):
         return converter.json_to_class(Geolocation, json_str)
 
 
+class Error(BunqModel):
+    """
+    :param _error_description: The error description (in English).
+    :type _error_description: str
+    :param _error_description_translated: The error description (in the user
+    language).
+    :type _error_description_translated: str
+    """
+
+    _error_description = None
+    _error_description_translated = None
+
+    @property
+    def error_description(self):
+        """
+        :rtype: str
+        """
+
+        return self._error_description
+
+    @property
+    def error_description_translated(self):
+        """
+        :rtype: str
+        """
+
+        return self._error_description_translated
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._error_description is not None:
+            return False
+
+        if self._error_description_translated is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: Error
+        """
+
+        return converter.json_to_class(Error, json_str)
+
+
+class PaymentBatchAnchoredPayment(BunqModel):
+    """
+    :param _Payment: 
+    :type _Payment: list[endpoint.Payment]
+    """
+
+    _Payment = None
+
+    @property
+    def Payment(self):
+        """
+        :rtype: list[endpoint.Payment]
+        """
+
+        return self._Payment
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._Payment is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: PaymentBatchAnchoredPayment
+        """
+
+        return converter.json_to_class(PaymentBatchAnchoredPayment, json_str)
+
+
+class PaymentFee(BunqModel):
+    """
+    :param _value: The amount formatted to two decimal places.
+    :type _value: str
+    :param _currency: The currency of the amount. It is an ISO 4217 formatted
+    currency code.
+    :type _currency: str
+    :param _invoice_id: The id of the invoice related to possible payment fee.
+    :type _invoice_id: int
+    """
+
+    _value = None
+    _currency = None
+    _invoice_id = None
+
+    @property
+    def value(self):
+        """
+        :rtype: str
+        """
+
+        return self._value
+
+    @property
+    def currency(self):
+        """
+        :rtype: str
+        """
+
+        return self._currency
+
+    @property
+    def invoice_id(self):
+        """
+        :rtype: int
+        """
+
+        return self._invoice_id
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._value is not None:
+            return False
+
+        if self._currency is not None:
+            return False
+
+        if self._invoice_id is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: PaymentFee
+        """
+
+        return converter.json_to_class(PaymentFee, json_str)
+
+
 class AttachmentPublic(BunqModel):
     """
     :param _uuid: The uuid of the attachment.
@@ -1983,6 +2138,150 @@ class CardCountryPermission(BunqModel):
         """
 
         return converter.json_to_class(CardCountryPermission, json_str)
+
+
+class CardPrimaryAccountNumber(BunqModel):
+    """
+    :param _id_: The ID for this Virtual PAN.
+    :type _id_: int
+    :param _description: The description for this PAN.
+    :type _description: str
+    :param _status: The status for this PAN, only for Online Cards.
+    :type _status: str
+    :param _monetary_account_id: The ID of the monetary account to assign to
+    this PAN, only for Online Cards.
+    :type _monetary_account_id: int
+    :param _uuid: The UUID for this Virtual PAN.
+    :type _uuid: str
+    :param _four_digit: The last four digits of the PAN.
+    :type _four_digit: str
+    :param _type_: The type of the PAN.
+    :type _type_: str
+    """
+
+    _id_ = None
+    _uuid = None
+    _description = None
+    _status = None
+    _monetary_account_id = None
+    _four_digit = None
+    _type_ = None
+    _id__field_for_request = None
+    _description_field_for_request = None
+    _status_field_for_request = None
+    _monetary_account_id_field_for_request = None
+
+    def __init__(self, id_=None, description=None, status=None, monetary_account_id=None):
+        """
+        :param id_: The ID for this PAN.
+        :type id_: int
+        :param description: The description for this PAN.
+        :type description: str
+        :param status: The status for this PAN, only for Online Cards.
+        :type status: str
+        :param monetary_account_id: The ID of the monetary account to assign to this
+        PAN, only for Online Cards.
+        :type monetary_account_id: int
+        """
+
+        self._id__field_for_request = id_
+        self._description_field_for_request = description
+        self._status_field_for_request = status
+        self._monetary_account_id_field_for_request = monetary_account_id
+
+    @property
+    def id_(self):
+        """
+        :rtype: int
+        """
+
+        return self._id_
+
+    @property
+    def uuid(self):
+        """
+        :rtype: str
+        """
+
+        return self._uuid
+
+    @property
+    def description(self):
+        """
+        :rtype: str
+        """
+
+        return self._description
+
+    @property
+    def status(self):
+        """
+        :rtype: str
+        """
+
+        return self._status
+
+    @property
+    def monetary_account_id(self):
+        """
+        :rtype: int
+        """
+
+        return self._monetary_account_id
+
+    @property
+    def four_digit(self):
+        """
+        :rtype: str
+        """
+
+        return self._four_digit
+
+    @property
+    def type_(self):
+        """
+        :rtype: str
+        """
+
+        return self._type_
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._id_ is not None:
+            return False
+
+        if self._uuid is not None:
+            return False
+
+        if self._description is not None:
+            return False
+
+        if self._status is not None:
+            return False
+
+        if self._monetary_account_id is not None:
+            return False
+
+        if self._four_digit is not None:
+            return False
+
+        if self._type_ is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: CardPrimaryAccountNumber
+        """
+
+        return converter.json_to_class(CardPrimaryAccountNumber, json_str)
 
 
 class Certificate(BunqModel):
@@ -2767,43 +3066,6 @@ class DraftPaymentAnchorObject(BunqModel, AnchorObjectInterface):
         return converter.json_to_class(DraftPaymentAnchorObject, json_str)
 
 
-class PaymentBatchAnchoredPayment(BunqModel):
-    """
-    :param _Payment: 
-    :type _Payment: list[endpoint.Payment]
-    """
-
-    _Payment = None
-
-    @property
-    def Payment(self):
-        """
-        :rtype: list[endpoint.Payment]
-        """
-
-        return self._Payment
-
-    def is_all_field_none(self):
-        """
-        :rtype: bool
-        """
-
-        if self._Payment is not None:
-            return False
-
-        return True
-
-    @staticmethod
-    def from_json(json_str):
-        """
-        :type json_str: str
-        
-        :rtype: PaymentBatchAnchoredPayment
-        """
-
-        return converter.json_to_class(PaymentBatchAnchoredPayment, json_str)
-
-
 class ScheduleAnchorObject(BunqModel, AnchorObjectInterface):
     """
     :param _Payment: 
@@ -3447,58 +3709,6 @@ class SchedulePaymentEntry(BunqModel):
         """
 
         return converter.json_to_class(SchedulePaymentEntry, json_str)
-
-
-class Error(BunqModel):
-    """
-    :param _error_description: The error description (in English).
-    :type _error_description: str
-    :param _error_description_translated: The error description (in the user
-    language).
-    :type _error_description_translated: str
-    """
-
-    _error_description = None
-    _error_description_translated = None
-
-    @property
-    def error_description(self):
-        """
-        :rtype: str
-        """
-
-        return self._error_description
-
-    @property
-    def error_description_translated(self):
-        """
-        :rtype: str
-        """
-
-        return self._error_description_translated
-
-    def is_all_field_none(self):
-        """
-        :rtype: bool
-        """
-
-        if self._error_description is not None:
-            return False
-
-        if self._error_description_translated is not None:
-            return False
-
-        return True
-
-    @staticmethod
-    def from_json(json_str):
-        """
-        :type json_str: str
-        
-        :rtype: Error
-        """
-
-        return converter.json_to_class(Error, json_str)
 
 
 class ScheduleInstanceAnchorObject(BunqModel, AnchorObjectInterface):

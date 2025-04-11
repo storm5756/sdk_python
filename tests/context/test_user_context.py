@@ -1,6 +1,5 @@
 from tests.bunq_test import BunqSdkTestCase
 
-
 class TestUserContext(BunqSdkTestCase):
     """
     Tests:

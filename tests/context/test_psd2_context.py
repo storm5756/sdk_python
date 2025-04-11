@@ -8,7 +8,6 @@ from bunq.sdk.json import converter
 from bunq.sdk.model.generated.endpoint import OauthClient
 from tests.bunq_test import BunqSdkTestCase
 
-
 class TestPsd2Context(unittest.TestCase):
     """
     Tests:
@@ -19,7 +18,7 @@ class TestPsd2Context(unittest.TestCase):
     _FILE_TEST_OAUTH = '/assets/bunq-oauth-psd2-test.conf'
 
     _FILE_TEST_CERTIFICATE = '/assets/cert.pem'
-    _FILE_TEST_CERTIFICATE_CHAIN = '/assets/cert.pem'
+    _FILE_TEST_CERTIFICATE_CHAIN = '/assets/certChain.pem'
     _FILE_TEST_PRIVATE_KEY = '/assets/key.pem'
 
     _TEST_DEVICE_DESCRIPTION = 'PSD2TestDevice'

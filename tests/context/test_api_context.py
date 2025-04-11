@@ -6,7 +6,6 @@ from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.json import converter
 from tests.bunq_test import BunqSdkTestCase
 
-
 class TestApiContext(BunqSdkTestCase):
     """
     Tests:
