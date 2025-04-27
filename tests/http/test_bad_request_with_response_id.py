@@ -1,6 +1,6 @@
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.exception.api_exception import ApiException
-from bunq.sdk.model.generated.endpoint import MonetaryAccountBank
+from bunq.sdk.model.generated.endpoint import MonetaryAccountBankApiObject
 from tests.bunq_test import BunqSdkTestCase
 
 
@@ -16,5 +16,5 @@ class TestPagination(BunqSdkTestCase):
         BunqContext.load_api_context(self._get_api_context())
 
         with self.assertRaises(ApiException) as caught_exception:
-            MonetaryAccountBank.get(self._INVALID_MONETARY_ACCOUNT_ID)
+            MonetaryAccountBankApiObject.get(self._INVALID_MONETARY_ACCOUNT_ID)
         self.assertIsNotNone(caught_exception.exception.response_id)

@@ -54,13 +54,20 @@ class BunqModel:
         return BunqResponse(value, response_raw.headers)
 
     @classmethod
-    def _unwrap_response_single(cls,
-                                obj: Dict,
-                                wrapper: str = None) -> Dict:
-        if wrapper is not None:
-            return obj[cls._FIELD_RESPONSE][cls._INDEX_FIRST][wrapper]
+    def _unwrap_response_single(cls, obj: Dict, wrapper: str = None) -> Dict:
+        if wrapper is None:
+            return obj[cls._FIELD_RESPONSE][cls._INDEX_FIRST]
 
-        return obj[cls._FIELD_RESPONSE][cls._INDEX_FIRST]
+        response_obj = obj[cls._FIELD_RESPONSE][cls._INDEX_FIRST]
+
+        if wrapper in response_obj:
+            return response_obj[wrapper]
+
+        for key in response_obj.keys():
+            if key.startswith(wrapper):
+                return response_obj[key]
+
+        raise KeyError(f"Could not find '{wrapper}' or any subclass in response: {list(response_obj.keys())}")
 
     @classmethod
     def _process_for_id(cls, response_raw: BunqResponseRaw) -> BunqResponse[int]:
@@ -134,10 +141,12 @@ class BunqModel:
 
     @classmethod
     def _remove_field_for_request(cls, json_str: str) -> str:
-        return json_str.replace(
+        result = json_str.replace(
             cls.__STRING_FORMAT_FIELD_FOR_REQUEST_TWO_UNDERSCORE,
             cls.__STRING_FORMAT_EMPTY
         ).replace(
             cls.__STRING_FORMAT_FIELD_FOR_REQUEST_ONE_UNDERSCORE,
             cls.__STRING_FORMAT_EMPTY
         )
+
+        return result

@@ -12,7 +12,7 @@ from bunq.sdk.context.session_context import SessionContext
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.json import converter
 from bunq.sdk.model.core.payment_service_provider_credential_internal import PaymentServiceProviderCredentialInternal
-from bunq.sdk.model.generated.endpoint import UserCredentialPasswordIp, Session
+from bunq.sdk.model.generated.endpoint import UserCredentialPasswordIpApiObject, SessionApiObject
 from bunq.sdk.security import security
 
 if typing.TYPE_CHECKING:
@@ -115,7 +115,7 @@ class ApiContext:
     def __initialize_psd2_credential(self,
                                      certificate: str,
                                      private_key: str,
-                                     all_chain_certificate: List[str]) -> UserCredentialPasswordIp:
+                                     all_chain_certificate: List[str]) -> UserCredentialPasswordIpApiObject:
         session_token = self.installation_context.token
         client_key_pair = self.installation_context.private_key_client
 

@@ -52,7 +52,17 @@ class AnchorObjectAdapter(converter.JsonAdapter):
             class_name = cls._override_field_map[class_name]
 
         try:
+            return getattr(endpoint, class_name + "ApiObject")
+        except AttributeError:
+            pass
+
+        try:
             return getattr(endpoint, class_name)
+        except AttributeError:
+            pass
+
+        try:
+            return getattr(object_, class_name + "Object")
         except AttributeError:
             pass
 

@@ -1,20 +1,22 @@
-from bunq.sdk.model.generated.endpoint import RequestInquiry
-from bunq.sdk.model.generated.endpoint import RequestResponse
-from bunq.sdk.model.generated.object_ import Amount
+from bunq.sdk.model.generated.endpoint import RequestInquiryApiObject
+from bunq.sdk.model.generated.endpoint import RequestResponseApiObject
+from bunq.sdk.model.generated.object_ import AmountObject
 from tests.bunq_test import BunqSdkTestCase
 
 
 class TestRequestEnquiry(BunqSdkTestCase):
     """
     Tests:
-        RequestInquiry
-        RequestResponse
+        RequestInquiryApiObject
+        RequestResponseApiObject
     """
 
     _REQUEST_AMOUNT_EUR = '0.01'
     _REQUEST_CURRENCY = 'EUR'
     _DESCRIPTION = 'Python unit test request'
-    _STATUS = 'ACCEPTED'
+    _FIELD_STATUS = 'status'
+    _STATUS_ACCEPTED = 'ACCEPTED'
+    _STATUS_PENDING = 'PENDING'
 
     def test_sending_and_accepting_request(self):
         """
@@ -27,17 +29,26 @@ class TestRequestEnquiry(BunqSdkTestCase):
 
         self.send_request()
 
-        request_response_id = RequestResponse.list(self._second_monetary_account.id_).value[self._FIRST_INDEX].id_
+        url_params_count_only_expected = {
+            self._FIELD_STATUS: self._STATUS_PENDING
+        }
+
+        request_response_id = RequestResponseApiObject.list(self._second_monetary_account.id_, url_params_count_only_expected).value[self._FIRST_INDEX].id_
 
         self.accept_request(request_response_id)
 
     def send_request(self) -> None:
-        RequestInquiry.create(
-            Amount(self._REQUEST_AMOUNT_EUR, self._REQUEST_CURRENCY),
+        RequestInquiryApiObject.create(
+            AmountObject(self._REQUEST_AMOUNT_EUR, self._REQUEST_CURRENCY),
             self._get_alias_second_account(),
             self._DESCRIPTION,
             False
         )
 
     def accept_request(self, response_id: int) -> None:
-        RequestResponse.update(response_id, monetary_account_id=self._second_monetary_account.id_, status=self._STATUS)
+        RequestResponseApiObject.update(
+            response_id,
+            self._second_monetary_account.id_,
+            None,
+            self._STATUS_ACCEPTED
+        )

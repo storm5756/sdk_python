@@ -248,19 +248,58 @@ class JsonAdapter(Generic[T]):
                                         module_: ModuleType,
                                         string: str) -> Type[T]:
         """
-
         :raise: BunqException when could not find the class for the string.
         """
+        # Handle the case where string doesn't contain a dot
+        if cls._DELIMITER_MODULE not in string:
+            # Try direct lookup in current module
+            if hasattr(module_, string):
+                return getattr(module_, string)
 
+            # Check module type and try appropriate suffix
+            if "object_" in module_.__name__:
+                # For object_ modules, try with Object suffix
+                obj_name = string + "Object"
+                if hasattr(module_, obj_name):
+                    return getattr(module_, obj_name)
+            elif "endpoint" in module_.__name__:
+                # For endpoint modules, try with ApiObject suffix
+                api_name = string + "ApiObject"
+                if hasattr(module_, api_name):
+                    return getattr(module_, api_name)
+            else:
+                # For other modules, try ApiObject suffix as default
+                api_name = string + "ApiObject"
+                if hasattr(module_, api_name):
+                    return getattr(module_, api_name)
+
+            # If not found, fallback to legacy behavior with appropriate error
+            error_message = cls._ERROR_COULD_NOT_FIND_CLASS.format(string)
+            raise BunqException(error_message)
+
+        # Original behavior for strings with dots
         module_name_short, class_name = string.split(cls._DELIMITER_MODULE)
         members = inspect.getmembers(module_, inspect.ismodule)
 
         for name, module_member in members:
             if module_name_short == name:
-                return getattr(module_member, class_name)
+                # Try original class name first
+                if hasattr(module_member, class_name):
+                    return getattr(module_member, class_name)
+
+                # If "object_" module, try with Object suffix
+                if "object_" in module_member.__name__:
+                    obj_name = class_name + "Object"
+                    if hasattr(module_member, obj_name):
+                        return getattr(module_member, obj_name)
+
+                # If "endpoint" module, try with ApiObject suffix
+                if "endpoint" in module_member.__name__:
+                    api_name = class_name + "ApiObject"
+                    if hasattr(module_member, api_name):
+                        return getattr(module_member, api_name)
 
         error_message = cls._ERROR_COULD_NOT_FIND_CLASS.format(string)
-
         raise BunqException(error_message)
 
     @classmethod

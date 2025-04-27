@@ -1,7 +1,7 @@
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.model.core.bunq_model import BunqModel
-from bunq.sdk.model.generated.endpoint import UserPerson, UserCompany, UserApiKey, MonetaryAccountBank, User, \
-    UserPaymentServiceProvider
+from bunq.sdk.model.generated.endpoint import UserPersonApiObject, UserCompanyApiObject, UserApiKeyApiObject, MonetaryAccountBankApiObject, UserApiObject, \
+    UserPaymentServiceProviderApiObject
 
 
 class UserContext:
@@ -21,19 +21,19 @@ class UserContext:
 
     @staticmethod
     def __get_user_object() -> BunqModel:
-        return User.list().value[0].get_referenced_object()
+        return UserApiObject.list().value[0].get_referenced_object()
 
     def _set_user(self, user: BunqModel) -> None:
-        if isinstance(user, UserPerson):
+        if isinstance(user, UserPersonApiObject):
             self._user_person = user
 
-        elif isinstance(user, UserCompany):
+        elif isinstance(user, UserCompanyApiObject):
             self._user_company = user
 
-        elif isinstance(user, UserApiKey):
+        elif isinstance(user, UserApiKeyApiObject):
             self._user_api_key = user
 
-        elif isinstance(user, UserPaymentServiceProvider):
+        elif isinstance(user, UserPaymentServiceProviderApiObject):
             self._user_payment_service_provider = user
 
         else:
@@ -44,7 +44,7 @@ class UserContext:
         if self._user_payment_service_provider is not None:
             return
 
-        all_monetary_account = MonetaryAccountBank.list().value
+        all_monetary_account = MonetaryAccountBankApiObject.list().value
 
         for account in all_monetary_account:
             if account.status == self._STATUS_ACTIVE:
@@ -87,17 +87,17 @@ class UserContext:
         self.init_main_monetary_account()
 
     @property
-    def user_company(self) -> UserCompany:
+    def user_company(self) -> UserCompanyApiObject:
         return self._user_company
 
     @property
-    def user_person(self) -> UserPerson:
+    def user_person(self) -> UserPersonApiObject:
         return self._user_person
 
     @property
-    def user_api_key(self) -> UserApiKey:
+    def user_api_key(self) -> UserApiKeyApiObject:
         return self._user_api_key
 
     @property
-    def primary_monetary_account(self) -> MonetaryAccountBank:
+    def primary_monetary_account(self) -> MonetaryAccountBankApiObject:
         return self._primary_monetary_account

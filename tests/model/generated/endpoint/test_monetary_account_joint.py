@@ -1,13 +1,13 @@
 import os
 
-from bunq.sdk.model.generated.endpoint import MonetaryAccountJoint
+from bunq.sdk.model.generated.endpoint import MonetaryAccountJointApiObject
 from tests.bunq_test import BunqSdkTestCase
 
 
 class TestMonetaryAccountJoint(BunqSdkTestCase):
     """
     Tests:
-        - MonetaryAccountJoint
+        - MonetaryAccountJointApiObject
         - CoOwner
     """
 
@@ -31,9 +31,9 @@ class TestMonetaryAccountJoint(BunqSdkTestCase):
         with open(file_path, self._FILE_MODE_READ) as f:
             json_string = f.read()
 
-        joint_account = MonetaryAccountJoint.from_json(json_string)
+        joint_account = MonetaryAccountJointApiObject.from_json(json_string)
 
-        self.assertIsInstance(joint_account, MonetaryAccountJoint)
+        self.assertIsInstance(joint_account, MonetaryAccountJointApiObject)
         self.assertIsNotNone(joint_account)
         self.assertIsNotNone(joint_account.all_co_owner)
 

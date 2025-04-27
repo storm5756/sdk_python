@@ -9,7 +9,7 @@ from bunq.sdk.model.generated import object_
 from bunq.sdk.security import security
 
 
-class BillingContractSubscription(BunqModel):
+class BillingContractSubscriptionApiObject(BunqModel):
     """
     Show the subscription billing contract for the authenticated user.
     
@@ -220,13 +220,13 @@ class BillingContractSubscription(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BillingContractSubscription
+        :rtype: BillingContractSubscriptionApiObject
         """
 
-        return converter.json_to_class(BillingContractSubscription, json_str)
+        return converter.json_to_class(BillingContractSubscriptionApiObject, json_str)
 
 
-class CustomerLimit(BunqModel):
+class CustomerLimitApiObject(BunqModel):
     """
     Show the limits for the authenticated user.
     
@@ -408,13 +408,13 @@ class CustomerLimit(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CustomerLimit
+        :rtype: CustomerLimitApiObject
         """
 
-        return converter.json_to_class(CustomerLimit, json_str)
+        return converter.json_to_class(CustomerLimitApiObject, json_str)
 
 
-class InvoiceExportPdf(BunqModel):
+class InvoiceExportPdfApiObject(BunqModel):
     """
     Get a PDF export of an invoice.
     
@@ -601,13 +601,13 @@ class InvoiceExportPdf(BunqModel):
         """
         :type json_str: str
         
-        :rtype: InvoiceExportPdf
+        :rtype: InvoiceExportPdfApiObject
         """
 
-        return converter.json_to_class(InvoiceExportPdf, json_str)
+        return converter.json_to_class(InvoiceExportPdfApiObject, json_str)
 
 
-class InvoiceExportPdfContent(BunqModel):
+class InvoiceExportPdfContentApiObject(BunqModel):
     """
     Get a PDF export of an invoice.
     """
@@ -652,13 +652,13 @@ class InvoiceExportPdfContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: InvoiceExportPdfContent
+        :rtype: InvoiceExportPdfContentApiObject
         """
 
-        return converter.json_to_class(InvoiceExportPdfContent, json_str)
+        return converter.json_to_class(InvoiceExportPdfContentApiObject, json_str)
 
 
-class Invoice(BunqModel):
+class InvoiceApiObject(BunqModel):
     """
     Used to view a bunq invoice.
     
@@ -1015,13 +1015,13 @@ class Invoice(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Invoice
+        :rtype: InvoiceApiObject
         """
 
-        return converter.json_to_class(Invoice, json_str)
+        return converter.json_to_class(InvoiceApiObject, json_str)
 
 
-class InvoiceByUser(BunqModel):
+class InvoiceByUserApiObject(BunqModel):
     """
     Used to list bunq invoices by user.
     
@@ -1320,13 +1320,13 @@ class InvoiceByUser(BunqModel):
         """
         :type json_str: str
         
-        :rtype: InvoiceByUser
+        :rtype: InvoiceByUserApiObject
         """
 
-        return converter.json_to_class(InvoiceByUser, json_str)
+        return converter.json_to_class(InvoiceByUserApiObject, json_str)
 
 
-class AdditionalTransactionInformationCategory(BunqModel):
+class AdditionalTransactionInformationCategoryApiObject(BunqModel):
     """
     Get the available categories.
     
@@ -1489,13 +1489,13 @@ class AdditionalTransactionInformationCategory(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AdditionalTransactionInformationCategory
+        :rtype: AdditionalTransactionInformationCategoryApiObject
         """
 
-        return converter.json_to_class(AdditionalTransactionInformationCategory, json_str)
+        return converter.json_to_class(AdditionalTransactionInformationCategoryApiObject, json_str)
 
 
-class AdditionalTransactionInformationCategoryUserDefined(BunqModel):
+class AdditionalTransactionInformationCategoryUserDefinedApiObject(BunqModel):
     """
     Manage user-defined categories.
     
@@ -1605,13 +1605,13 @@ cls.FIELD_ICON : icon
         """
         :type json_str: str
         
-        :rtype: AdditionalTransactionInformationCategoryUserDefined
+        :rtype: AdditionalTransactionInformationCategoryUserDefinedApiObject
         """
 
-        return converter.json_to_class(AdditionalTransactionInformationCategoryUserDefined, json_str)
+        return converter.json_to_class(AdditionalTransactionInformationCategoryUserDefinedApiObject, json_str)
 
 
-class AttachmentConversationContent(BunqModel):
+class AttachmentConversationContentApiObject(BunqModel):
     """
     Fetch the raw content of an attachment with given ID. The raw content is the
     base64 of a file, without any JSON wrapping.
@@ -1660,13 +1660,13 @@ class AttachmentConversationContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentConversationContent
+        :rtype: AttachmentConversationContentApiObject
         """
 
-        return converter.json_to_class(AttachmentConversationContent, json_str)
+        return converter.json_to_class(AttachmentConversationContentApiObject, json_str)
 
 
-class AttachmentMonetaryAccountContent(BunqModel):
+class AttachmentMonetaryAccountContentApiObject(BunqModel):
     """
     Fetch the raw content of a monetary account attachment with given ID. The
     raw content is the binary representation of a file, without any JSON
@@ -1716,13 +1716,13 @@ class AttachmentMonetaryAccountContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentMonetaryAccountContent
+        :rtype: AttachmentMonetaryAccountContentApiObject
         """
 
-        return converter.json_to_class(AttachmentMonetaryAccountContent, json_str)
+        return converter.json_to_class(AttachmentMonetaryAccountContentApiObject, json_str)
 
 
-class AttachmentPublicContent(BunqModel):
+class AttachmentPublicContentApiObject(BunqModel):
     """
     Fetch the raw content of a public attachment with given ID. The raw content
     is the binary representation of a file, without any JSON wrapping.
@@ -1769,13 +1769,13 @@ class AttachmentPublicContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentPublicContent
+        :rtype: AttachmentPublicContentApiObject
         """
 
-        return converter.json_to_class(AttachmentPublicContent, json_str)
+        return converter.json_to_class(AttachmentPublicContentApiObject, json_str)
 
 
-class AttachmentUserContent(BunqModel):
+class AttachmentUserContentApiObject(BunqModel):
     """
     Fetch the raw content of a user attachment with given ID. The raw content is
     the binary representation of a file, without any JSON wrapping.
@@ -1823,13 +1823,13 @@ class AttachmentUserContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentUserContent
+        :rtype: AttachmentUserContentApiObject
         """
 
-        return converter.json_to_class(AttachmentUserContent, json_str)
+        return converter.json_to_class(AttachmentUserContentApiObject, json_str)
 
 
-class AttachmentMonetaryAccount(BunqModel):
+class AttachmentMonetaryAccountApiObject(BunqModel):
     """
     This call is used to upload an attachment that can be referenced to in
     payment requests and payments sent from a specific monetary account.
@@ -1909,13 +1909,13 @@ class AttachmentMonetaryAccount(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentMonetaryAccount
+        :rtype: AttachmentMonetaryAccountApiObject
         """
 
-        return converter.json_to_class(AttachmentMonetaryAccount, json_str)
+        return converter.json_to_class(AttachmentMonetaryAccountApiObject, json_str)
 
 
-class AttachmentPublic(BunqModel):
+class AttachmentPublicApiObject(BunqModel):
     """
     This call is used to upload an attachment that can be referenced to as an
     avatar (through the Avatar endpoint) or in a tab sent. Attachments supported
@@ -2051,13 +2051,13 @@ class AttachmentPublic(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentPublic
+        :rtype: AttachmentPublicApiObject
         """
 
-        return converter.json_to_class(AttachmentPublic, json_str)
+        return converter.json_to_class(AttachmentPublicApiObject, json_str)
 
 
-class AttachmentUser(BunqModel):
+class AttachmentUserApiObject(BunqModel):
     """
     This call is used to upload an attachment that is accessible only by a
     specific user. This can be used for example to upload passport scans or
@@ -2165,20 +2165,20 @@ class AttachmentUser(BunqModel):
         """
         :type json_str: str
         
-        :rtype: AttachmentUser
+        :rtype: AttachmentUserApiObject
         """
 
-        return converter.json_to_class(AttachmentUser, json_str)
+        return converter.json_to_class(AttachmentUserApiObject, json_str)
 
 
-class Avatar(BunqModel):
+class AvatarApiObject(BunqModel):
     """
     Avatars are public images used to represent you or your company. Avatars are
-    used to represent users and monetary accounts. Avatars cannot be deleted,
-    only replaced. Avatars can be updated after uploading the image you would
-    like to use through AttachmentPublic. Using the attachment_public_uuid which
-    is returned you can update your Avatar. Avatars used for cash registers and
-    company accounts will be reviewed by bunq.
+    used to represent users, monetary accounts and cash registers. Avatars
+    cannot be deleted, only replaced. Avatars can be updated after uploading the
+    image you would like to use through AttachmentPublic. Using the
+    attachment_public_uuid which is returned you can update your Avatar. Avatars
+    used for cash registers and company accounts will be reviewed by bunq.
     
     :param _attachment_public_uuid: The public UUID of the public attachment
     from which an avatar image must be created.
@@ -2297,13 +2297,13 @@ cls.FIELD_ATTACHMENT_PUBLIC_UUID : attachment_public_uuid
         """
         :type json_str: str
         
-        :rtype: Avatar
+        :rtype: AvatarApiObject
         """
 
-        return converter.json_to_class(Avatar, json_str)
+        return converter.json_to_class(AvatarApiObject, json_str)
 
 
-class BankSwitchServiceNetherlandsIncomingPayment(BunqModel):
+class BankSwitchServiceNetherlandsIncomingPaymentApiObject(BunqModel):
     """
     An incoming payment made towards an account of an external bank and
     redirected to a bunq account via switch service.
@@ -2380,13 +2380,13 @@ class BankSwitchServiceNetherlandsIncomingPayment(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BankSwitchServiceNetherlandsIncomingPayment
+        :rtype: BankSwitchServiceNetherlandsIncomingPaymentApiObject
         """
 
-        return converter.json_to_class(BankSwitchServiceNetherlandsIncomingPayment, json_str)
+        return converter.json_to_class(BankSwitchServiceNetherlandsIncomingPaymentApiObject, json_str)
 
 
-class BankSwitchServiceNetherlandsIncoming(BunqModel):
+class BankSwitchServiceNetherlandsIncomingApiObject(BunqModel):
     """
     Endpoint for using the Equens Bank Switch Service.
     
@@ -2621,13 +2621,13 @@ class BankSwitchServiceNetherlandsIncoming(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BankSwitchServiceNetherlandsIncoming
+        :rtype: BankSwitchServiceNetherlandsIncomingApiObject
         """
 
-        return converter.json_to_class(BankSwitchServiceNetherlandsIncoming, json_str)
+        return converter.json_to_class(BankSwitchServiceNetherlandsIncomingApiObject, json_str)
 
 
-class Payment(BunqModel):
+class PaymentApiObject(BunqModel):
     """
     Using Payment, you can send payments to bunq and non-bunq users from your
     bunq MonetaryAccounts. This can be done using bunq Aliases or IBAN Aliases.
@@ -3228,13 +3228,13 @@ cls.FIELD_ALLOW_BUNQTO : allow_bunqto
         """
         :type json_str: str
         
-        :rtype: Payment
+        :rtype: PaymentApiObject
         """
 
-        return converter.json_to_class(Payment, json_str)
+        return converter.json_to_class(PaymentApiObject, json_str)
 
 
-class PaymentAutoAllocateInstance(BunqModel):
+class PaymentAutoAllocateInstanceApiObject(BunqModel):
     """
     List all the times a users payment was automatically allocated.
     
@@ -3443,18 +3443,18 @@ class PaymentAutoAllocateInstance(BunqModel):
         """
         :type json_str: str
         
-        :rtype: PaymentAutoAllocateInstance
+        :rtype: PaymentAutoAllocateInstanceApiObject
         """
 
-        return converter.json_to_class(PaymentAutoAllocateInstance, json_str)
+        return converter.json_to_class(PaymentAutoAllocateInstanceApiObject, json_str)
 
 
-class PaymentBatch(BunqModel):
+class PaymentBatchApiObject(BunqModel):
     """
     Create a payment batch, or show the payment batches of a monetary account.
     
     :param _payments: The list of mutations that were made.
-    :type _payments: object_.PaymentBatchAnchoredPayment
+    :type _payments: list[Payment]
     """
 
     # Endpoint constants.
@@ -3601,7 +3601,7 @@ cls.FIELD_PAYMENTS : payments
     @property
     def payments(self):
         """
-        :rtype: object_.PaymentBatchAnchoredPayment
+        :rtype: list[Payment]
         """
 
         return self._payments
@@ -3621,13 +3621,13 @@ cls.FIELD_PAYMENTS : payments
         """
         :type json_str: str
         
-        :rtype: PaymentBatch
+        :rtype: PaymentBatchApiObject
         """
 
-        return converter.json_to_class(PaymentBatch, json_str)
+        return converter.json_to_class(PaymentBatchApiObject, json_str)
 
 
-class GinmonTransaction(BunqModel):
+class GinmonTransactionApiObject(BunqModel):
     """
     Endpoint for reading Ginmon transactions.
     
@@ -3803,13 +3803,13 @@ class GinmonTransaction(BunqModel):
         """
         :type json_str: str
         
-        :rtype: GinmonTransaction
+        :rtype: GinmonTransactionApiObject
         """
 
-        return converter.json_to_class(GinmonTransaction, json_str)
+        return converter.json_to_class(GinmonTransactionApiObject, json_str)
 
 
-class PaymentSuspendedOutgoing(BunqModel):
+class PaymentSuspendedOutgoingApiObject(BunqModel):
     """
     Suspended outgoing payments.
     
@@ -3886,13 +3886,13 @@ class PaymentSuspendedOutgoing(BunqModel):
         """
         :type json_str: str
         
-        :rtype: PaymentSuspendedOutgoing
+        :rtype: PaymentSuspendedOutgoingApiObject
         """
 
-        return converter.json_to_class(PaymentSuspendedOutgoing, json_str)
+        return converter.json_to_class(PaymentSuspendedOutgoingApiObject, json_str)
 
 
-class BunqMeFundraiserProfileUser(BunqModel):
+class BunqMeFundraiserProfileUserApiObject(BunqModel):
     """
     bunq.me public profile of the user.
     
@@ -4163,13 +4163,13 @@ class BunqMeFundraiserProfileUser(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BunqMeFundraiserProfileUser
+        :rtype: BunqMeFundraiserProfileUserApiObject
         """
 
-        return converter.json_to_class(BunqMeFundraiserProfileUser, json_str)
+        return converter.json_to_class(BunqMeFundraiserProfileUserApiObject, json_str)
 
 
-class BunqMeFundraiserResult(BunqModel):
+class BunqMeFundraiserResultApiObject(BunqModel):
     """
     bunq.me fundraiser result containing all payments.
     
@@ -4288,13 +4288,13 @@ class BunqMeFundraiserResult(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BunqMeFundraiserResult
+        :rtype: BunqMeFundraiserResultApiObject
         """
 
-        return converter.json_to_class(BunqMeFundraiserResult, json_str)
+        return converter.json_to_class(BunqMeFundraiserResultApiObject, json_str)
 
 
-class BunqMeFundraiserProfile(BunqModel):
+class BunqMeFundraiserProfileApiObject(BunqModel):
     """
     bunq.me public profile of the user.
     
@@ -4476,13 +4476,13 @@ class BunqMeFundraiserProfile(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BunqMeFundraiserProfile
+        :rtype: BunqMeFundraiserProfileApiObject
         """
 
-        return converter.json_to_class(BunqMeFundraiserProfile, json_str)
+        return converter.json_to_class(BunqMeFundraiserProfileApiObject, json_str)
 
 
-class BunqMeTabResultResponse(BunqModel):
+class BunqMeTabResultResponseApiObject(BunqModel):
     """
     Used to view bunq.me TabResultResponse objects belonging to a tab. A
     TabResultResponse is an object that holds details on a tab which has been
@@ -4546,13 +4546,13 @@ class BunqMeTabResultResponse(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BunqMeTabResultResponse
+        :rtype: BunqMeTabResultResponseApiObject
         """
 
-        return converter.json_to_class(BunqMeTabResultResponse, json_str)
+        return converter.json_to_class(BunqMeTabResultResponseApiObject, json_str)
 
 
-class BunqMeTab(BunqModel):
+class BunqMeTabApiObject(BunqModel):
     """
     bunq.me tabs allows you to create a payment request and share the link
     through e-mail, chat, etc. Multiple persons are able to respond to the
@@ -4909,13 +4909,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: BunqMeTab
+        :rtype: BunqMeTabApiObject
         """
 
-        return converter.json_to_class(BunqMeTab, json_str)
+        return converter.json_to_class(BunqMeTabApiObject, json_str)
 
 
-class BunqMeTabEntry(BunqModel):
+class BunqMeTabEntryApiObject(BunqModel):
     """
     bunq.me tabs allows you to create a payment request and share the link
     through e-mail, chat, etc. Multiple persons are able to respond to the
@@ -5080,13 +5080,13 @@ class BunqMeTabEntry(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BunqMeTabEntry
+        :rtype: BunqMeTabEntryApiObject
         """
 
-        return converter.json_to_class(BunqMeTabEntry, json_str)
+        return converter.json_to_class(BunqMeTabEntryApiObject, json_str)
 
 
-class BunqMeTabResultInquiry(BunqModel):
+class BunqMeTabResultInquiryApiObject(BunqModel):
     """
     Used to view bunq.me TabResultInquiry objects belonging to a tab. A
     TabResultInquiry is an object that holds details on both the tab and a
@@ -5136,13 +5136,13 @@ class BunqMeTabResultInquiry(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BunqMeTabResultInquiry
+        :rtype: BunqMeTabResultInquiryApiObject
         """
 
-        return converter.json_to_class(BunqMeTabResultInquiry, json_str)
+        return converter.json_to_class(BunqMeTabResultInquiryApiObject, json_str)
 
 
-class CardBatchReplace(BunqModel):
+class CardBatchReplaceApiObject(BunqModel):
     """
     Used to replace multiple cards in a batch.
     
@@ -5224,13 +5224,13 @@ cls.FIELD_CARDS : cards
         """
         :type json_str: str
         
-        :rtype: CardBatchReplace
+        :rtype: CardBatchReplaceApiObject
         """
 
-        return converter.json_to_class(CardBatchReplace, json_str)
+        return converter.json_to_class(CardBatchReplaceApiObject, json_str)
 
 
-class CardBatch(BunqModel):
+class CardBatchApiObject(BunqModel):
     """
     Used to update multiple cards in a batch.
     
@@ -5312,13 +5312,13 @@ cls.FIELD_CARDS : cards
         """
         :type json_str: str
         
-        :rtype: CardBatch
+        :rtype: CardBatchApiObject
         """
 
-        return converter.json_to_class(CardBatch, json_str)
+        return converter.json_to_class(CardBatchApiObject, json_str)
 
 
-class CardCredit(BunqModel):
+class CardCreditApiObject(BunqModel):
     """
     With bunq it is possible to order credit cards that can then be connected
     with each one of the monetary accounts the user has access to (including
@@ -6026,13 +6026,13 @@ cls.FIELD_ORDER_STATUS : order_status
         """
         :type json_str: str
         
-        :rtype: CardCredit
+        :rtype: CardCreditApiObject
         """
 
-        return converter.json_to_class(CardCredit, json_str)
+        return converter.json_to_class(CardCreditApiObject, json_str)
 
 
-class CardReplacement(BunqModel):
+class CardReplacementApiObject(BunqModel):
     """
     Endpoint for getting the Card Replacement of a card.
     
@@ -6123,13 +6123,13 @@ class CardReplacement(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CardReplacement
+        :rtype: CardReplacementApiObject
         """
 
-        return converter.json_to_class(CardReplacement, json_str)
+        return converter.json_to_class(CardReplacementApiObject, json_str)
 
 
-class CardGeneratedCvc2(BunqModel):
+class CardGeneratedCvc2ApiObject(BunqModel):
     """
     Endpoint for generating and retrieving a new CVC2 code.
     
@@ -6384,13 +6384,13 @@ cls.FIELD_TYPE : type_
         """
         :type json_str: str
         
-        :rtype: CardGeneratedCvc2
+        :rtype: CardGeneratedCvc2ApiObject
         """
 
-        return converter.json_to_class(CardGeneratedCvc2, json_str)
+        return converter.json_to_class(CardGeneratedCvc2ApiObject, json_str)
 
 
-class CardDebit(BunqModel):
+class CardDebitApiObject(BunqModel):
     """
     With bunq it is possible to order debit cards that can then be connected
     with each one of the monetary accounts the user has access to (including
@@ -7086,13 +7086,13 @@ cls.FIELD_ORDER_STATUS : order_status
         """
         :type json_str: str
         
-        :rtype: CardDebit
+        :rtype: CardDebitApiObject
         """
 
-        return converter.json_to_class(CardDebit, json_str)
+        return converter.json_to_class(CardDebitApiObject, json_str)
 
 
-class CardName(BunqModel):
+class CardNameApiObject(BunqModel):
     """
     Endpoint for getting all the accepted card names for a user. As bunq do not
     allow total freedom in choosing the name that is going to be printed on the
@@ -7175,13 +7175,13 @@ class CardName(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CardName
+        :rtype: CardNameApiObject
         """
 
-        return converter.json_to_class(CardName, json_str)
+        return converter.json_to_class(CardNameApiObject, json_str)
 
 
-class CardReplace(BunqModel):
+class CardReplaceApiObject(BunqModel):
     """
     It is possible to order a card replacement with the bunq API.<br/><br/>You
     can order up to one free card replacement per year. Additional replacement
@@ -7308,13 +7308,13 @@ cls.FIELD_SECOND_LINE : second_line
         """
         :type json_str: str
         
-        :rtype: CardReplace
+        :rtype: CardReplaceApiObject
         """
 
-        return converter.json_to_class(CardReplace, json_str)
+        return converter.json_to_class(CardReplaceApiObject, json_str)
 
 
-class Card(BunqModel):
+class CardApiObject(BunqModel):
     """
     Endpoint for retrieving details for the cards the user has access to.
     
@@ -8114,13 +8114,13 @@ cls.FIELD_CANCELLATION_REASON : cancellation_reason
         """
         :type json_str: str
         
-        :rtype: Card
+        :rtype: CardApiObject
         """
 
-        return converter.json_to_class(Card, json_str)
+        return converter.json_to_class(CardApiObject, json_str)
 
 
-class CertificatePinned(BunqModel):
+class CertificatePinnedApiObject(BunqModel):
     """
     This endpoint allow you to pin the certificate chains to your account. These
     certificate chains are used for SSL validation whenever a callback is
@@ -8295,13 +8295,13 @@ cls.FIELD_CERTIFICATE_CHAIN : certificate_chain
         """
         :type json_str: str
         
-        :rtype: CertificatePinned
+        :rtype: CertificatePinnedApiObject
         """
 
-        return converter.json_to_class(CertificatePinned, json_str)
+        return converter.json_to_class(CertificatePinnedApiObject, json_str)
 
 
-class CompanyEmployeeSettingAdyenCardTransaction(BunqModel):
+class CompanyEmployeeSettingAdyenCardTransactionApiObject(BunqModel):
     """
     Manage permissions for Adyen card transactions / Tap to Pay for a company
     employee.
@@ -8405,13 +8405,13 @@ class CompanyEmployeeSettingAdyenCardTransaction(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CompanyEmployeeSettingAdyenCardTransaction
+        :rtype: CompanyEmployeeSettingAdyenCardTransactionApiObject
         """
 
-        return converter.json_to_class(CompanyEmployeeSettingAdyenCardTransaction, json_str)
+        return converter.json_to_class(CompanyEmployeeSettingAdyenCardTransactionApiObject, json_str)
 
 
-class Company(BunqModel):
+class CompanyApiObject(BunqModel):
     """
     Create and manage companies.
     
@@ -8689,13 +8689,13 @@ cls.FIELD_AVATAR_UUID : avatar_uuid
         """
         :type json_str: str
         
-        :rtype: Company
+        :rtype: CompanyApiObject
         """
 
-        return converter.json_to_class(Company, json_str)
+        return converter.json_to_class(CompanyApiObject, json_str)
 
 
-class UserCompany(BunqModel):
+class UserCompanyApiObject(BunqModel):
     """
     With UserCompany you can retrieve information regarding the authenticated
     UserCompany and update specific fields.<br/><br/>Notification filters can be
@@ -9414,13 +9414,13 @@ cls.FIELD_DAILY_LIMIT_WITHOUT_CONFIRMATION_LOGIN : daily_limit_without_confirmat
         """
         :type json_str: str
         
-        :rtype: UserCompany
+        :rtype: UserCompanyApiObject
         """
 
-        return converter.json_to_class(UserCompany, json_str)
+        return converter.json_to_class(UserCompanyApiObject, json_str)
 
 
-class Customer(BunqModel):
+class CustomerApiObject(BunqModel):
     """
     Used to view a customer.
     
@@ -9531,13 +9531,13 @@ class Customer(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Customer
+        :rtype: CustomerApiObject
         """
 
-        return converter.json_to_class(Customer, json_str)
+        return converter.json_to_class(CustomerApiObject, json_str)
 
 
-class RelationUser(BunqModel):
+class RelationUserApiObject(BunqModel):
     """
     Manage the relation user details.
     
@@ -9698,13 +9698,13 @@ class RelationUser(BunqModel):
         """
         :type json_str: str
         
-        :rtype: RelationUser
+        :rtype: RelationUserApiObject
         """
 
-        return converter.json_to_class(RelationUser, json_str)
+        return converter.json_to_class(RelationUserApiObject, json_str)
 
 
-class CompanyEmployeeCard(BunqModel):
+class CompanyEmployeeCardApiObject(BunqModel):
     """
     Manage cards for company employees.
     
@@ -9740,6 +9740,9 @@ class CompanyEmployeeCard(BunqModel):
     :param _number_of_company_employee_card_receipt_pending: The number of
     transactions that still need a receipt.
     :type _number_of_company_employee_card_receipt_pending: int
+    :param _company_employee_card_limit: The company employee's monthly
+    cumulative card limit.
+    :type _company_employee_card_limit: CompanyEmployeeCardLimit
     """
 
     # Field constants.
@@ -9760,6 +9763,7 @@ class CompanyEmployeeCard(BunqModel):
     _amount_limit_monthly = None
     _amount_spent_monthly = None
     _number_of_company_employee_card_receipt_pending = None
+    _company_employee_card_limit = None
     _pointer_counter_user_field_for_request = None
     _pointer_monetary_account_field_for_request = None
     _type__field_for_request = None
@@ -9858,6 +9862,14 @@ class CompanyEmployeeCard(BunqModel):
 
         return self._number_of_company_employee_card_receipt_pending
 
+    @property
+    def company_employee_card_limit(self):
+        """
+        :rtype: CompanyEmployeeCardLimit
+        """
+
+        return self._company_employee_card_limit
+
     def is_all_field_none(self):
         """
         :rtype: bool
@@ -9881,6 +9893,9 @@ class CompanyEmployeeCard(BunqModel):
         if self._number_of_company_employee_card_receipt_pending is not None:
             return False
 
+        if self._company_employee_card_limit is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -9888,13 +9903,112 @@ class CompanyEmployeeCard(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CompanyEmployeeCard
+        :rtype: CompanyEmployeeCardApiObject
         """
 
-        return converter.json_to_class(CompanyEmployeeCard, json_str)
+        return converter.json_to_class(CompanyEmployeeCardApiObject, json_str)
 
 
-class ConfirmationOfFunds(BunqModel):
+class CompanyEmployeeCardLimitApiObject(BunqModel):
+    """
+    Manage the card limit for company employees.
+    
+    :param _amount_limit_monthly: The monthly spending limit for this employee
+    on the card.
+    :type _amount_limit_monthly: object_.Amount
+    :param _user_company_id: Company item id.
+    :type _user_company_id: int
+    :param _user_employee_id: Company employee item id.
+    :type _user_employee_id: int
+    :param _amount_spent_monthly: The monthly spend for this employee on the
+    card.
+    :type _amount_spent_monthly: object_.Amount
+    """
+
+    # Field constants.
+    FIELD_AMOUNT_LIMIT_MONTHLY = "amount_limit_monthly"
+
+
+    _user_company_id = None
+    _user_employee_id = None
+    _amount_limit_monthly = None
+    _amount_spent_monthly = None
+    _amount_limit_monthly_field_for_request = None
+
+    def __init__(self, amount_limit_monthly=None):
+        """
+        :param amount_limit_monthly: The monthly spending limit for this employee on
+        the card.
+        :type amount_limit_monthly: object_.Amount
+        """
+
+        self._amount_limit_monthly_field_for_request = amount_limit_monthly
+
+
+
+    @property
+    def user_company_id(self):
+        """
+        :rtype: int
+        """
+
+        return self._user_company_id
+
+    @property
+    def user_employee_id(self):
+        """
+        :rtype: int
+        """
+
+        return self._user_employee_id
+
+    @property
+    def amount_limit_monthly(self):
+        """
+        :rtype: object_.Amount
+        """
+
+        return self._amount_limit_monthly
+
+    @property
+    def amount_spent_monthly(self):
+        """
+        :rtype: object_.Amount
+        """
+
+        return self._amount_spent_monthly
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._user_company_id is not None:
+            return False
+
+        if self._user_employee_id is not None:
+            return False
+
+        if self._amount_limit_monthly is not None:
+            return False
+
+        if self._amount_spent_monthly is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: CompanyEmployeeCardLimitApiObject
+        """
+
+        return converter.json_to_class(CompanyEmployeeCardLimitApiObject, json_str)
+
+
+class ConfirmationOfFundsApiObject(BunqModel):
     """
     Used to confirm availability of funds on an account.
     
@@ -9986,13 +10100,13 @@ cls.FIELD_AMOUNT : amount
         """
         :type json_str: str
         
-        :rtype: ConfirmationOfFunds
+        :rtype: ConfirmationOfFundsApiObject
         """
 
-        return converter.json_to_class(ConfirmationOfFunds, json_str)
+        return converter.json_to_class(ConfirmationOfFundsApiObject, json_str)
 
 
-class CurrencyCloudBeneficiaryRequirement(BunqModel):
+class CurrencyCloudBeneficiaryRequirementApiObject(BunqModel):
     """
     Endpoint to list requirements for CurrencyCloud beneficiaries.
     
@@ -10083,13 +10197,13 @@ class CurrencyCloudBeneficiaryRequirement(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CurrencyCloudBeneficiaryRequirement
+        :rtype: CurrencyCloudBeneficiaryRequirementApiObject
         """
 
-        return converter.json_to_class(CurrencyCloudBeneficiaryRequirement, json_str)
+        return converter.json_to_class(CurrencyCloudBeneficiaryRequirementApiObject, json_str)
 
 
-class CurrencyCloudBeneficiary(BunqModel):
+class CurrencyCloudBeneficiaryApiObject(BunqModel):
     """
     Endpoint to manage CurrencyCloud beneficiaries.
     
@@ -10352,13 +10466,13 @@ cls.FIELD_ALL_FIELD : all_field
         """
         :type json_str: str
         
-        :rtype: CurrencyCloudBeneficiary
+        :rtype: CurrencyCloudBeneficiaryApiObject
         """
 
-        return converter.json_to_class(CurrencyCloudBeneficiary, json_str)
+        return converter.json_to_class(CurrencyCloudBeneficiaryApiObject, json_str)
 
 
-class CurrencyCloudPaymentQuote(BunqModel):
+class CurrencyCloudPaymentQuoteApiObject(BunqModel):
     """
     Endpoint for managing currency conversions.
     
@@ -10439,13 +10553,13 @@ cls.FIELD_POINTERS : pointers
         """
         :type json_str: str
         
-        :rtype: CurrencyCloudPaymentQuote
+        :rtype: CurrencyCloudPaymentQuoteApiObject
         """
 
-        return converter.json_to_class(CurrencyCloudPaymentQuote, json_str)
+        return converter.json_to_class(CurrencyCloudPaymentQuoteApiObject, json_str)
 
 
-class CurrencyConversionQuote(BunqModel):
+class CurrencyConversionQuoteApiObject(BunqModel):
     """
     Endpoint to create a quote for currency conversions.
     
@@ -10736,13 +10850,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: CurrencyConversionQuote
+        :rtype: CurrencyConversionQuoteApiObject
         """
 
-        return converter.json_to_class(CurrencyConversionQuote, json_str)
+        return converter.json_to_class(CurrencyConversionQuoteApiObject, json_str)
 
 
-class CurrencyConversion(BunqModel):
+class CurrencyConversionApiObject(BunqModel):
     """
     Endpoint for managing currency conversions.
     
@@ -11014,13 +11128,13 @@ class CurrencyConversion(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CurrencyConversion
+        :rtype: CurrencyConversionApiObject
         """
 
-        return converter.json_to_class(CurrencyConversion, json_str)
+        return converter.json_to_class(CurrencyConversionApiObject, json_str)
 
 
-class DeviceServer(BunqModel):
+class DeviceServerApiObject(BunqModel):
     """
     After having created an Installation you can now create a DeviceServer. A
     DeviceServer is needed to do a login call with session-server.
@@ -11256,13 +11370,13 @@ cls.FIELD_PERMITTED_IPS : permitted_ips
         """
         :type json_str: str
         
-        :rtype: DeviceServer
+        :rtype: DeviceServerApiObject
         """
 
-        return converter.json_to_class(DeviceServer, json_str)
+        return converter.json_to_class(DeviceServerApiObject, json_str)
 
 
-class Device(BunqModel, AnchorObjectInterface):
+class DeviceApiObject(BunqModel, AnchorObjectInterface):
     """
     Used to get a Device or a listing of Devices. Creating a DeviceServer should
     happen via /device-server
@@ -11365,13 +11479,13 @@ class Device(BunqModel, AnchorObjectInterface):
         """
         :type json_str: str
         
-        :rtype: Device
+        :rtype: DeviceApiObject
         """
 
-        return converter.json_to_class(Device, json_str)
+        return converter.json_to_class(DeviceApiObject, json_str)
 
 
-class DraftPayment(BunqModel):
+class DraftPaymentApiObject(BunqModel):
     """
     A DraftPayment is like a regular Payment, but it needs to be accepted by the
     sending party before the actual Payment is done.
@@ -11734,13 +11848,13 @@ cls.FIELD_SCHEDULE : schedule
         """
         :type json_str: str
         
-        :rtype: DraftPayment
+        :rtype: DraftPaymentApiObject
         """
 
-        return converter.json_to_class(DraftPayment, json_str)
+        return converter.json_to_class(DraftPaymentApiObject, json_str)
 
 
-class Schedule(BunqModel):
+class ScheduleApiObject(BunqModel):
     """
     view for reading the scheduled definitions.
     
@@ -11937,13 +12051,13 @@ class Schedule(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Schedule
+        :rtype: ScheduleApiObject
         """
 
-        return converter.json_to_class(Schedule, json_str)
+        return converter.json_to_class(ScheduleApiObject, json_str)
 
 
-class ServerError(BunqModel):
+class ServerErrorApiObject(BunqModel):
     """
     An endpoint that will always throw an error.
     """
@@ -11991,13 +12105,13 @@ class ServerError(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ServerError
+        :rtype: ServerErrorApiObject
         """
 
-        return converter.json_to_class(ServerError, json_str)
+        return converter.json_to_class(ServerErrorApiObject, json_str)
 
 
-class Event(BunqModel):
+class EventApiObject(BunqModel):
     """
     Used to view events. Events are automatically created and contain
     information about everything that happens to your bunq account. In the bunq
@@ -12248,13 +12362,13 @@ class Event(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Event
+        :rtype: EventApiObject
         """
 
-        return converter.json_to_class(Event, json_str)
+        return converter.json_to_class(EventApiObject, json_str)
 
 
-class FeatureAnnouncement(BunqModel):
+class FeatureAnnouncementApiObject(BunqModel):
     """
     view for updating the feature display.
     
@@ -12358,13 +12472,13 @@ class FeatureAnnouncement(BunqModel):
         """
         :type json_str: str
         
-        :rtype: FeatureAnnouncement
+        :rtype: FeatureAnnouncementApiObject
         """
 
-        return converter.json_to_class(FeatureAnnouncement, json_str)
+        return converter.json_to_class(FeatureAnnouncementApiObject, json_str)
 
 
-class IdealMerchantTransaction(BunqModel):
+class IdealMerchantTransactionApiObject(BunqModel):
     """
     View for requesting iDEAL transactions and polling their status.
     
@@ -12675,13 +12789,13 @@ cls.FIELD_ISSUER : issuer
         """
         :type json_str: str
         
-        :rtype: IdealMerchantTransaction
+        :rtype: IdealMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(IdealMerchantTransaction, json_str)
+        return converter.json_to_class(IdealMerchantTransactionApiObject, json_str)
 
 
-class SchedulePayment(BunqModel):
+class SchedulePaymentApiObject(BunqModel):
     """
     Endpoint for schedule payments.
     
@@ -12689,6 +12803,8 @@ class SchedulePayment(BunqModel):
     :type _payment: object_.SchedulePaymentEntry
     :param _schedule: The schedule details.
     :type _schedule: Schedule
+    :param _purpose: The schedule purpose.
+    :type _purpose: str
     :param _status: The schedule status, options: ACTIVE, FINISHED, CANCELLED.
     :type _status: str
     """
@@ -12703,6 +12819,7 @@ class SchedulePayment(BunqModel):
     # Field constants.
     FIELD_PAYMENT = "payment"
     FIELD_SCHEDULE = "schedule"
+    FIELD_PURPOSE = "purpose"
 
     # Object type.
     _OBJECT_TYPE_GET = "ScheduledPayment"
@@ -12711,23 +12828,28 @@ class SchedulePayment(BunqModel):
     _payment = None
     _schedule = None
     _status = None
+    _purpose = None
     _payment_field_for_request = None
     _schedule_field_for_request = None
+    _purpose_field_for_request = None
 
-    def __init__(self, payment=None, schedule=None):
+    def __init__(self, payment=None, schedule=None, purpose=None):
         """
         :param payment: The payment details.
         :type payment: object_.SchedulePaymentEntry
         :param schedule: The schedule details when creating or updating a scheduled
         payment.
         :type schedule: Schedule
+        :param purpose: The purpose of this scheduled payment.
+        :type purpose: str
         """
 
         self._payment_field_for_request = payment
         self._schedule_field_for_request = schedule
+        self._purpose_field_for_request = purpose
 
     @classmethod
-    def create(cls,payment, schedule, monetary_account_id=None, custom_headers=None):
+    def create(cls,payment, schedule, monetary_account_id=None, purpose=None, custom_headers=None):
         """
         :type user_id: int
         :type monetary_account_id: int
@@ -12736,6 +12858,8 @@ class SchedulePayment(BunqModel):
         :param schedule: The schedule details when creating or updating a
         scheduled payment.
         :type schedule: Schedule
+        :param purpose: The purpose of this scheduled payment.
+        :type purpose: str
         :type custom_headers: dict[str, str]|None
         
         :rtype: BunqResponseInt
@@ -12746,7 +12870,8 @@ class SchedulePayment(BunqModel):
 
         request_map = {
 cls.FIELD_PAYMENT : payment,
-cls.FIELD_SCHEDULE : schedule
+cls.FIELD_SCHEDULE : schedule,
+cls.FIELD_PURPOSE : purpose
 }
         request_map_string = converter.class_to_json(request_map)
         request_map_string = cls._remove_field_for_request(request_map_string)
@@ -12890,6 +13015,14 @@ cls.FIELD_SCHEDULE : schedule
 
         return self._status
 
+    @property
+    def purpose(self):
+        """
+        :rtype: str
+        """
+
+        return self._purpose
+
     def is_all_field_none(self):
         """
         :rtype: bool
@@ -12904,6 +13037,9 @@ cls.FIELD_SCHEDULE : schedule
         if self._status is not None:
             return False
 
+        if self._purpose is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -12911,13 +13047,13 @@ cls.FIELD_SCHEDULE : schedule
         """
         :type json_str: str
         
-        :rtype: SchedulePayment
+        :rtype: SchedulePaymentApiObject
         """
 
-        return converter.json_to_class(SchedulePayment, json_str)
+        return converter.json_to_class(SchedulePaymentApiObject, json_str)
 
 
-class SchedulePaymentBatch(BunqModel):
+class SchedulePaymentBatchApiObject(BunqModel):
     """
     Endpoint for schedule payment batches.
     
@@ -13103,13 +13239,13 @@ cls.FIELD_SCHEDULE : schedule
         """
         :type json_str: str
         
-        :rtype: SchedulePaymentBatch
+        :rtype: SchedulePaymentBatchApiObject
         """
 
-        return converter.json_to_class(SchedulePaymentBatch, json_str)
+        return converter.json_to_class(SchedulePaymentBatchApiObject, json_str)
 
 
-class ScheduleInstance(BunqModel):
+class ScheduleInstanceApiObject(BunqModel):
     """
     view for reading, updating and listing the scheduled instance.
     
@@ -13336,13 +13472,13 @@ cls.FIELD_STATE : state
         """
         :type json_str: str
         
-        :rtype: ScheduleInstance
+        :rtype: ScheduleInstanceApiObject
         """
 
-        return converter.json_to_class(ScheduleInstance, json_str)
+        return converter.json_to_class(ScheduleInstanceApiObject, json_str)
 
 
-class MasterCardAction(BunqModel):
+class MasterCardActionApiObject(BunqModel):
     """
     MasterCard transaction view.
     
@@ -14121,13 +14257,13 @@ class MasterCardAction(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MasterCardAction
+        :rtype: MasterCardActionApiObject
         """
 
-        return converter.json_to_class(MasterCardAction, json_str)
+        return converter.json_to_class(MasterCardActionApiObject, json_str)
 
 
-class MasterCardActionRefund(BunqModel):
+class MasterCardActionRefundApiObject(BunqModel):
     """
     Endpoint for creating a refund request for a masterCard transaction.
     
@@ -14498,13 +14634,13 @@ class MasterCardActionRefund(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MasterCardActionRefund
+        :rtype: MasterCardActionRefundApiObject
         """
 
-        return converter.json_to_class(MasterCardActionRefund, json_str)
+        return converter.json_to_class(MasterCardActionRefundApiObject, json_str)
 
 
-class CashbackPayoutItem(BunqModel):
+class CashbackPayoutItemApiObject(BunqModel):
     """
     Cashback payout item details.
     
@@ -14595,13 +14731,13 @@ class CashbackPayoutItem(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CashbackPayoutItem
+        :rtype: CashbackPayoutItemApiObject
         """
 
-        return converter.json_to_class(CashbackPayoutItem, json_str)
+        return converter.json_to_class(CashbackPayoutItemApiObject, json_str)
 
 
-class UserPartnerPromotionCashback(BunqModel):
+class UserPartnerPromotionCashbackApiObject(BunqModel):
     """
     Endpoint to specify that a user signed up using a promotion code.
     
@@ -14682,29 +14818,23 @@ class UserPartnerPromotionCashback(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserPartnerPromotionCashback
+        :rtype: UserPartnerPromotionCashbackApiObject
         """
 
-        return converter.json_to_class(UserPartnerPromotionCashback, json_str)
+        return converter.json_to_class(UserPartnerPromotionCashbackApiObject, json_str)
 
 
-class PartnerPromotionCashback(BunqModel):
+class PartnerPromotionCashbackApiObject(BunqModel):
     """
-    Manage Partner Cashback Promotions.
+    Read the publicly available information of a partner’s promotion.
     
+    :param _public_uuid: The public UUID of the cashback promotion.
+    :type _public_uuid: str
+    :param _status: The status of the cashback promotion.
+    :type _status: str
     :param _promotion_code: The promotion code used in signup to indicate the
     partner that referred the user.
     :type _promotion_code: str
-    :param _status: The status of the cashback promotion.
-    :type _status: str
-    :param _description: The internal description displayed in the admin.
-    :type _description: str
-    :param _date_start: The date this cashback promotion starts.
-    :type _date_start: str
-    :param _date_end: The date this cashback promotion ends.
-    :type _date_end: str
-    :param _currency: The currency of the cashback promotion.
-    :type _currency: str
     :param _amount_cashback_per_transaction_maximum: The amount of cashback per
     transaction, will not be higher than the amount of the transaction.
     :type _amount_cashback_per_transaction_maximum: object_.Amount
@@ -14720,42 +14850,15 @@ class PartnerPromotionCashback(BunqModel):
     :type _deeplink: str
     :param _partner_name: The name of the partner.
     :type _partner_name: str
-    :param _partner_avatar_uuid: The ID of the avatar of the partner.
-    :type _partner_avatar_uuid: str
+    :param _partner_avatar: The avatar of the partner.
+    :type _partner_avatar: object_.Avatar
     :param _promotion_title_short: The short title of the promotion.
     :type _promotion_title_short: list[str]
     :param _promotion_title_long: The long title of the promotion.
     :type _promotion_title_long: list[str]
     :param _promotion_description: The description of the promotion.
     :type _promotion_description: list[str]
-    :param _all_partner_identifier: The identifiers to match the partner when
-    payments are made to it.
-    :type _all_partner_identifier: list[str]
-    :param _public_uuid: The public UUID of the cashback promotion.
-    :type _public_uuid: str
-    :param _partner_avatar: The avatar of the partner.
-    :type _partner_avatar: object_.Avatar
     """
-
-    # Field constants.
-    FIELD_PROMOTION_CODE = "promotion_code"
-    FIELD_STATUS = "status"
-    FIELD_DESCRIPTION = "description"
-    FIELD_DATE_START = "date_start"
-    FIELD_DATE_END = "date_end"
-    FIELD_CURRENCY = "currency"
-    FIELD_AMOUNT_CASHBACK_PER_TRANSACTION_MAXIMUM = "amount_cashback_per_transaction_maximum"
-    FIELD_NUMBER_OF_TRANSACTION_MAXIMUM = "number_of_transaction_maximum"
-    FIELD_AMOUNT_TRANSACTION_MINIMUM = "amount_transaction_minimum"
-    FIELD_URL_TOGETHER = "url_together"
-    FIELD_DEEPLINK = "deeplink"
-    FIELD_PARTNER_NAME = "partner_name"
-    FIELD_PARTNER_AVATAR_UUID = "partner_avatar_uuid"
-    FIELD_PROMOTION_TITLE_SHORT = "promotion_title_short"
-    FIELD_PROMOTION_TITLE_LONG = "promotion_title_long"
-    FIELD_PROMOTION_DESCRIPTION = "promotion_description"
-    FIELD_ALL_PARTNER_IDENTIFIER = "all_partner_identifier"
-
 
     _public_uuid = None
     _status = None
@@ -14770,86 +14873,6 @@ class PartnerPromotionCashback(BunqModel):
     _promotion_title_short = None
     _promotion_title_long = None
     _promotion_description = None
-    _promotion_code_field_for_request = None
-    _status_field_for_request = None
-    _description_field_for_request = None
-    _date_start_field_for_request = None
-    _date_end_field_for_request = None
-    _currency_field_for_request = None
-    _amount_cashback_per_transaction_maximum_field_for_request = None
-    _number_of_transaction_maximum_field_for_request = None
-    _amount_transaction_minimum_field_for_request = None
-    _url_together_field_for_request = None
-    _deeplink_field_for_request = None
-    _partner_name_field_for_request = None
-    _partner_avatar_uuid_field_for_request = None
-    _promotion_title_short_field_for_request = None
-    _promotion_title_long_field_for_request = None
-    _promotion_description_field_for_request = None
-    _all_partner_identifier_field_for_request = None
-
-    def __init__(self, promotion_code, currency, description=None, date_start=None, date_end=None, amount_cashback_per_transaction_maximum=None, number_of_transaction_maximum=None, amount_transaction_minimum=None, deeplink=None, partner_name=None, partner_avatar_uuid=None, promotion_title_short=None, promotion_title_long=None, promotion_description=None, status=None, url_together=None, all_partner_identifier=None):
-        """
-        :param promotion_code: The promotion code used in signup to indicate the
-        partner that referred the user.
-        :type promotion_code: str
-        :param description: The internal description displayed in the admin.
-        :type description: str
-        :param date_start: The date this cashback promotion starts.
-        :type date_start: str
-        :param date_end: The date this cashback promotion ends.
-        :type date_end: str
-        :param currency: The currency of the cashback promotion.
-        :type currency: str
-        :param amount_cashback_per_transaction_maximum: The amount of cashback per
-        transaction, will not be higher than the amount of the transaction.
-        :type amount_cashback_per_transaction_maximum: object_.Amount
-        :param number_of_transaction_maximum: The maximum number of transactions
-        that can be made.
-        :type number_of_transaction_maximum: int
-        :param amount_transaction_minimum: The minimum amount of a transaction.
-        :type amount_transaction_minimum: object_.Amount
-        :param deeplink: The deeplink to the cashback promotion.
-        :type deeplink: str
-        :param partner_name: The name of the partner to display.
-        :type partner_name: str
-        :param partner_avatar_uuid: The ID of the avatar of the partner.
-        :type partner_avatar_uuid: str
-        :param promotion_title_short: The short title of the promotion.
-        :type promotion_title_short: list[str]
-        :param promotion_title_long: The long title of the promotion.
-        :type promotion_title_long: list[str]
-        :param promotion_description: The description of the promotion.
-        :type promotion_description: list[str]
-        :param status: The status of the cashback promotion.
-        :type status: str
-        :param url_together: The URL to the Together page with FAQs about this
-        promotion.
-        :type url_together: str
-        :param all_partner_identifier: The identifiers to match the partner when
-        payments are made to it.
-        :type all_partner_identifier: list[str]
-        """
-
-        self._promotion_code_field_for_request = promotion_code
-        self._description_field_for_request = description
-        self._date_start_field_for_request = date_start
-        self._date_end_field_for_request = date_end
-        self._currency_field_for_request = currency
-        self._amount_cashback_per_transaction_maximum_field_for_request = amount_cashback_per_transaction_maximum
-        self._number_of_transaction_maximum_field_for_request = number_of_transaction_maximum
-        self._amount_transaction_minimum_field_for_request = amount_transaction_minimum
-        self._deeplink_field_for_request = deeplink
-        self._partner_name_field_for_request = partner_name
-        self._partner_avatar_uuid_field_for_request = partner_avatar_uuid
-        self._promotion_title_short_field_for_request = promotion_title_short
-        self._promotion_title_long_field_for_request = promotion_title_long
-        self._promotion_description_field_for_request = promotion_description
-        self._status_field_for_request = status
-        self._url_together_field_for_request = url_together
-        self._all_partner_identifier_field_for_request = all_partner_identifier
-
-
 
     @property
     def public_uuid(self):
@@ -15006,13 +15029,13 @@ class PartnerPromotionCashback(BunqModel):
         """
         :type json_str: str
         
-        :rtype: PartnerPromotionCashback
+        :rtype: PartnerPromotionCashbackApiObject
         """
 
-        return converter.json_to_class(PartnerPromotionCashback, json_str)
+        return converter.json_to_class(PartnerPromotionCashbackApiObject, json_str)
 
 
-class PointMutation(BunqModel):
+class PointMutationApiObject(BunqModel):
     """
     Endpoint to retrieve point mutation.
     
@@ -15045,13 +15068,13 @@ class PointMutation(BunqModel):
         """
         :type json_str: str
         
-        :rtype: PointMutation
+        :rtype: PointMutationApiObject
         """
 
-        return converter.json_to_class(PointMutation, json_str)
+        return converter.json_to_class(PointMutationApiObject, json_str)
 
 
-class UserBlocklistMasterCardMerchant(BunqModel):
+class UserBlocklistMasterCardMerchantApiObject(BunqModel):
     """
     Fetch blocklists of merchants created by user
     
@@ -15260,13 +15283,13 @@ class UserBlocklistMasterCardMerchant(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserBlocklistMasterCardMerchant
+        :rtype: UserBlocklistMasterCardMerchantApiObject
         """
 
-        return converter.json_to_class(UserBlocklistMasterCardMerchant, json_str)
+        return converter.json_to_class(UserBlocklistMasterCardMerchantApiObject, json_str)
 
 
-class MasterCardActionReport(BunqModel):
+class MasterCardActionReportApiObject(BunqModel):
     """
     MasterCard report view.
     
@@ -15394,13 +15417,13 @@ class MasterCardActionReport(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MasterCardActionReport
+        :rtype: MasterCardActionReportApiObject
         """
 
-        return converter.json_to_class(MasterCardActionReport, json_str)
+        return converter.json_to_class(MasterCardActionReportApiObject, json_str)
 
 
-class CompanyEmployeeCardReceipt(BunqModel):
+class CompanyEmployeeCardReceiptApiObject(BunqModel):
     """
     The receipt the company employee has provided for a transaction.
     
@@ -15448,13 +15471,13 @@ class CompanyEmployeeCardReceipt(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CompanyEmployeeCardReceipt
+        :rtype: CompanyEmployeeCardReceiptApiObject
         """
 
-        return converter.json_to_class(CompanyEmployeeCardReceipt, json_str)
+        return converter.json_to_class(CompanyEmployeeCardReceiptApiObject, json_str)
 
 
-class RequestInquiryBatch(BunqModel):
+class RequestInquiryBatchApiObject(BunqModel):
     """
     Create a batch of requests for payment, or show the request batches of a
     monetary account.
@@ -15696,13 +15719,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: RequestInquiryBatch
+        :rtype: RequestInquiryBatchApiObject
         """
 
-        return converter.json_to_class(RequestInquiryBatch, json_str)
+        return converter.json_to_class(RequestInquiryBatchApiObject, json_str)
 
 
-class RequestInquiry(BunqModel):
+class RequestInquiryApiObject(BunqModel):
     """
     RequestInquiry, aka 'RFP' (Request for Payment), is one of the innovative
     features that bunq offers. To request payment from another bunq account a
@@ -16395,13 +16418,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: RequestInquiry
+        :rtype: RequestInquiryApiObject
         """
 
-        return converter.json_to_class(RequestInquiry, json_str)
+        return converter.json_to_class(RequestInquiryApiObject, json_str)
 
 
-class RequestResponse(BunqModel):
+class RequestResponseApiObject(BunqModel):
     """
     A RequestResponse is what a user on the other side of a RequestInquiry gets
     when he is sent one. So a RequestInquiry is the initiator and visible for
@@ -17038,13 +17061,13 @@ cls.FIELD_CURRENCY_CONVERSION_QUOTE_ID : currency_conversion_quote_id
         """
         :type json_str: str
         
-        :rtype: RequestResponse
+        :rtype: RequestResponseApiObject
         """
 
-        return converter.json_to_class(RequestResponse, json_str)
+        return converter.json_to_class(RequestResponseApiObject, json_str)
 
 
-class WhitelistResult(BunqModel):
+class WhitelistResultApiObject(BunqModel):
     """
     Whitelist an SDD so that when one comes in, it is automatically accepted.
     
@@ -17180,13 +17203,13 @@ class WhitelistResult(BunqModel):
         """
         :type json_str: str
         
-        :rtype: WhitelistResult
+        :rtype: WhitelistResultApiObject
         """
 
-        return converter.json_to_class(WhitelistResult, json_str)
+        return converter.json_to_class(WhitelistResultApiObject, json_str)
 
 
-class Whitelist(BunqModel):
+class WhitelistApiObject(BunqModel):
     """
     Whitelist a Request so that when one comes in, it is automatically accepted.
     """
@@ -17204,13 +17227,13 @@ class Whitelist(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Whitelist
+        :rtype: WhitelistApiObject
         """
 
-        return converter.json_to_class(Whitelist, json_str)
+        return converter.json_to_class(WhitelistApiObject, json_str)
 
 
-class TransferwiseTransfer(BunqModel):
+class TransferwiseTransferApiObject(BunqModel):
     """
     Used to create Transferwise payments.
     
@@ -17527,13 +17550,13 @@ cls.FIELD_RECIPIENT_ID : recipient_id
         """
         :type json_str: str
         
-        :rtype: TransferwiseTransfer
+        :rtype: TransferwiseTransferApiObject
         """
 
-        return converter.json_to_class(TransferwiseTransfer, json_str)
+        return converter.json_to_class(TransferwiseTransferApiObject, json_str)
 
 
-class TransferwiseQuote(BunqModel):
+class TransferwiseQuoteApiObject(BunqModel):
     """
     Used to get quotes from Transferwise. These can be used to initiate
     payments.
@@ -17795,13 +17818,13 @@ cls.FIELD_AMOUNT_TARGET : amount_target
         """
         :type json_str: str
         
-        :rtype: TransferwiseQuote
+        :rtype: TransferwiseQuoteApiObject
         """
 
-        return converter.json_to_class(TransferwiseQuote, json_str)
+        return converter.json_to_class(TransferwiseQuoteApiObject, json_str)
 
 
-class ShareInviteMonetaryAccountInquiry(BunqModel):
+class ShareInviteMonetaryAccountInquiryApiObject(BunqModel):
     """
     [DEPRECATED - use /share-invite-monetary-account-response] Used to share a
     monetary account with another bunq user, as in the 'Connect' feature in the
@@ -18210,13 +18233,13 @@ cls.FIELD_END_DATE : end_date
         """
         :type json_str: str
         
-        :rtype: ShareInviteMonetaryAccountInquiry
+        :rtype: ShareInviteMonetaryAccountInquiryApiObject
         """
 
-        return converter.json_to_class(ShareInviteMonetaryAccountInquiry, json_str)
+        return converter.json_to_class(ShareInviteMonetaryAccountInquiryApiObject, json_str)
 
 
-class ShareInviteMonetaryAccountResponse(BunqModel):
+class ShareInviteMonetaryAccountResponseApiObject(BunqModel):
     """
     Used to view or respond to shares a user was invited to. See
     'share-invite-bank-inquiry' for more information about the inquiring
@@ -18574,13 +18597,13 @@ cls.FIELD_CARD_ID : card_id
         """
         :type json_str: str
         
-        :rtype: ShareInviteMonetaryAccountResponse
+        :rtype: ShareInviteMonetaryAccountResponseApiObject
         """
 
-        return converter.json_to_class(ShareInviteMonetaryAccountResponse, json_str)
+        return converter.json_to_class(ShareInviteMonetaryAccountResponseApiObject, json_str)
 
 
-class SofortMerchantTransaction(BunqModel):
+class SofortMerchantTransactionApiObject(BunqModel):
     """
     View for requesting Sofort transactions and polling their status.
     
@@ -18815,13 +18838,13 @@ class SofortMerchantTransaction(BunqModel):
         """
         :type json_str: str
         
-        :rtype: SofortMerchantTransaction
+        :rtype: SofortMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(SofortMerchantTransaction, json_str)
+        return converter.json_to_class(SofortMerchantTransactionApiObject, json_str)
 
 
-class ExportAnnualOverviewContent(BunqModel):
+class ExportAnnualOverviewContentApiObject(BunqModel):
     """
     Fetch the raw content of an annual overview. The annual overview is always
     in PDF format. Doc won't display the response of a request to get the
@@ -18870,13 +18893,13 @@ class ExportAnnualOverviewContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportAnnualOverviewContent
+        :rtype: ExportAnnualOverviewContentApiObject
         """
 
-        return converter.json_to_class(ExportAnnualOverviewContent, json_str)
+        return converter.json_to_class(ExportAnnualOverviewContentApiObject, json_str)
 
 
-class ExportAnnualOverview(BunqModel):
+class ExportAnnualOverviewApiObject(BunqModel):
     """
     Used to create new and read existing annual overviews of all the user's
     monetary accounts. Once created, annual overviews can be downloaded in PDF
@@ -19105,13 +19128,13 @@ cls.FIELD_YEAR : year
         """
         :type json_str: str
         
-        :rtype: ExportAnnualOverview
+        :rtype: ExportAnnualOverviewApiObject
         """
 
-        return converter.json_to_class(ExportAnnualOverview, json_str)
+        return converter.json_to_class(ExportAnnualOverviewApiObject, json_str)
 
 
-class ExportRibContent(BunqModel):
+class ExportRibContentApiObject(BunqModel):
     """
     Fetch the raw content of an RIB. The RIB is always in PDF format.
     """
@@ -19159,13 +19182,13 @@ class ExportRibContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportRibContent
+        :rtype: ExportRibContentApiObject
         """
 
-        return converter.json_to_class(ExportRibContent, json_str)
+        return converter.json_to_class(ExportRibContentApiObject, json_str)
 
 
-class ExportRib(BunqModel):
+class ExportRibApiObject(BunqModel):
     """
     Used to create new and read existing RIBs of a monetary account
     
@@ -19339,13 +19362,13 @@ class ExportRib(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportRib
+        :rtype: ExportRibApiObject
         """
 
-        return converter.json_to_class(ExportRib, json_str)
+        return converter.json_to_class(ExportRibApiObject, json_str)
 
 
-class ExportStatementCardCsv(BunqModel):
+class ExportStatementCardCsvApiObject(BunqModel):
     """
     Used to serialize ExportStatementCardCsv
     
@@ -19616,13 +19639,13 @@ cls.FIELD_REGIONAL_FORMAT : regional_format
         """
         :type json_str: str
         
-        :rtype: ExportStatementCardCsv
+        :rtype: ExportStatementCardCsvApiObject
         """
 
-        return converter.json_to_class(ExportStatementCardCsv, json_str)
+        return converter.json_to_class(ExportStatementCardCsvApiObject, json_str)
 
 
-class ExportStatementCardPdf(BunqModel):
+class ExportStatementCardPdfApiObject(BunqModel):
     """
     Used to serialize ExportStatementCardPdf
     
@@ -19868,13 +19891,13 @@ cls.FIELD_DATE_END : date_end
         """
         :type json_str: str
         
-        :rtype: ExportStatementCardPdf
+        :rtype: ExportStatementCardPdfApiObject
         """
 
-        return converter.json_to_class(ExportStatementCardPdf, json_str)
+        return converter.json_to_class(ExportStatementCardPdfApiObject, json_str)
 
 
-class ExportStatementCard(BunqModel):
+class ExportStatementCardApiObject(BunqModel):
     """
     Used to create new and read existing card statement exports. Statement
     exports can be created in either CSV or PDF file format.
@@ -20061,13 +20084,13 @@ class ExportStatementCard(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportStatementCard
+        :rtype: ExportStatementCardApiObject
         """
 
-        return converter.json_to_class(ExportStatementCard, json_str)
+        return converter.json_to_class(ExportStatementCardApiObject, json_str)
 
 
-class ExportStatementCardContent(BunqModel):
+class ExportStatementCardContentApiObject(BunqModel):
     """
     Fetch the raw content of a card statement export. The returned file format
     could be CSV or PDF depending on the statement format specified during the
@@ -20116,13 +20139,13 @@ class ExportStatementCardContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportStatementCardContent
+        :rtype: ExportStatementCardContentApiObject
         """
 
-        return converter.json_to_class(ExportStatementCardContent, json_str)
+        return converter.json_to_class(ExportStatementCardContentApiObject, json_str)
 
 
-class ExportStatementContent(BunqModel):
+class ExportStatementContentApiObject(BunqModel):
     """
     Fetch the raw content of a statement export. The returned file format could
     be MT940, CSV or PDF depending on the statement format specified during the
@@ -20171,13 +20194,13 @@ class ExportStatementContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportStatementContent
+        :rtype: ExportStatementContentApiObject
         """
 
-        return converter.json_to_class(ExportStatementContent, json_str)
+        return converter.json_to_class(ExportStatementContentApiObject, json_str)
 
 
-class ExportStatementPaymentContent(BunqModel):
+class ExportStatementPaymentContentApiObject(BunqModel):
     """
     Fetch the raw content of a payment statement export.
     """
@@ -20224,13 +20247,13 @@ class ExportStatementPaymentContent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportStatementPaymentContent
+        :rtype: ExportStatementPaymentContentApiObject
         """
 
-        return converter.json_to_class(ExportStatementPaymentContent, json_str)
+        return converter.json_to_class(ExportStatementPaymentContentApiObject, json_str)
 
 
-class ExportStatementPayment(BunqModel):
+class ExportStatementPaymentApiObject(BunqModel):
     """
     Used to create a statement export of a single payment.
     
@@ -20365,13 +20388,13 @@ class ExportStatementPayment(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ExportStatementPayment
+        :rtype: ExportStatementPaymentApiObject
         """
 
-        return converter.json_to_class(ExportStatementPayment, json_str)
+        return converter.json_to_class(ExportStatementPaymentApiObject, json_str)
 
 
-class ExportStatement(BunqModel):
+class ExportStatementApiObject(BunqModel):
     """
     Used to create new and read existing statement exports. Statement exports
     can be created in either CSV, MT940 or PDF file format.
@@ -20696,13 +20719,13 @@ cls.FIELD_INCLUDE_ATTACHMENT : include_attachment
         """
         :type json_str: str
         
-        :rtype: ExportStatement
+        :rtype: ExportStatementApiObject
         """
 
-        return converter.json_to_class(ExportStatement, json_str)
+        return converter.json_to_class(ExportStatementApiObject, json_str)
 
 
-class InsightEvent(BunqModel):
+class InsightEventApiObject(BunqModel):
     """
     Used to get events based on time and insight category.
     
@@ -20868,13 +20891,13 @@ class InsightEvent(BunqModel):
         """
         :type json_str: str
         
-        :rtype: InsightEvent
+        :rtype: InsightEventApiObject
         """
 
-        return converter.json_to_class(InsightEvent, json_str)
+        return converter.json_to_class(InsightEventApiObject, json_str)
 
 
-class InsightPreferenceDate(BunqModel):
+class InsightPreferenceDateApiObject(BunqModel):
     """
     Used to allow users to set insight/budget preferences.
     
@@ -20951,13 +20974,13 @@ class InsightPreferenceDate(BunqModel):
         """
         :type json_str: str
         
-        :rtype: InsightPreferenceDate
+        :rtype: InsightPreferenceDateApiObject
         """
 
-        return converter.json_to_class(InsightPreferenceDate, json_str)
+        return converter.json_to_class(InsightPreferenceDateApiObject, json_str)
 
 
-class Insight(BunqModel):
+class InsightApiObject(BunqModel):
     """
     Used to get insights about transactions between given time range.
     
@@ -21091,13 +21114,13 @@ class Insight(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Insight
+        :rtype: InsightApiObject
         """
 
-        return converter.json_to_class(Insight, json_str)
+        return converter.json_to_class(InsightApiObject, json_str)
 
 
-class InstallationServerPublicKey(BunqModel):
+class InstallationServerPublicKeyApiObject(BunqModel):
     """
     Using /installation/_/server-public-key you can request the ServerPublicKey
     again. This is done by referring to the id of the Installation.
@@ -21163,13 +21186,13 @@ class InstallationServerPublicKey(BunqModel):
         """
         :type json_str: str
         
-        :rtype: InstallationServerPublicKey
+        :rtype: InstallationServerPublicKeyApiObject
         """
 
-        return converter.json_to_class(InstallationServerPublicKey, json_str)
+        return converter.json_to_class(InstallationServerPublicKeyApiObject, json_str)
 
 
-class MonetaryAccountBank(BunqModel):
+class MonetaryAccountBankApiObject(BunqModel):
     """
     With MonetaryAccountBank you can create a new bank account, retrieve
     information regarding your existing MonetaryAccountBanks and update specific
@@ -21239,7 +21262,7 @@ class MonetaryAccountBank(BunqModel):
     :param _user_id: The id of the User who owns the MonetaryAccountBank.
     :type _user_id: int
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _all_auto_save_id: The ids of the AutoSave.
     :type _all_auto_save_id: list[object_.BunqId]
     :param _fulfillments: The fulfillments for this MonetaryAccount.
@@ -21256,6 +21279,8 @@ class MonetaryAccountBank(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Endpoint constants.
@@ -21308,6 +21333,7 @@ class MonetaryAccountBank(BunqModel):
     _co_owner_invite = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _currency_field_for_request = None
     _description_field_for_request = None
     _daily_limit_field_for_request = None
@@ -21726,7 +21752,7 @@ cls.FIELD_SETTING : setting
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -21802,6 +21828,14 @@ cls.FIELD_SETTING : setting
         """
 
         return self._birdee_investment_portfolio
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     def is_all_field_none(self):
         """
@@ -21892,6 +21926,9 @@ cls.FIELD_SETTING : setting
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -21899,13 +21936,13 @@ cls.FIELD_SETTING : setting
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountBank
+        :rtype: MonetaryAccountBankApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountBank, json_str)
+        return converter.json_to_class(MonetaryAccountBankApiObject, json_str)
 
 
-class MonetaryAccountProfile(BunqModel):
+class MonetaryAccountProfileApiObject(BunqModel):
     """
     Used to update and read up monetary account profiles, to keep the balance
     between specific thresholds.
@@ -21977,13 +22014,13 @@ class MonetaryAccountProfile(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountProfile
+        :rtype: MonetaryAccountProfileApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountProfile, json_str)
+        return converter.json_to_class(MonetaryAccountProfileApiObject, json_str)
 
 
-class Fulfillment(BunqModel):
+class FulfillmentApiObject(BunqModel):
     """
     Endpoint for getting information fulfillments for a user.
     
@@ -22102,13 +22139,13 @@ class Fulfillment(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Fulfillment
+        :rtype: FulfillmentApiObject
         """
 
-        return converter.json_to_class(Fulfillment, json_str)
+        return converter.json_to_class(FulfillmentApiObject, json_str)
 
 
-class MonetaryAccountBudget(BunqModel):
+class MonetaryAccountBudgetApiObject(BunqModel):
     """
     Endpoint to read, list, or delete the budget for a monetary account.
     
@@ -22181,13 +22218,13 @@ class MonetaryAccountBudget(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountBudget
+        :rtype: MonetaryAccountBudgetApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountBudget, json_str)
+        return converter.json_to_class(MonetaryAccountBudgetApiObject, json_str)
 
 
-class CoOwnerInviteResponse(BunqModel):
+class CoOwnerInviteResponseApiObject(BunqModel):
     """
     Used to accept or reject a monetaryAccountJoint co-ownership.
     
@@ -22338,13 +22375,13 @@ class CoOwnerInviteResponse(BunqModel):
         """
         :type json_str: str
         
-        :rtype: CoOwnerInviteResponse
+        :rtype: CoOwnerInviteResponseApiObject
         """
 
-        return converter.json_to_class(CoOwnerInviteResponse, json_str)
+        return converter.json_to_class(CoOwnerInviteResponseApiObject, json_str)
 
 
-class OpenBankingAccount(BunqModel):
+class OpenBankingAccountApiObject(BunqModel):
     """
     Post processor for open banking account to be returned in the monetary
     account external post processor.
@@ -22450,13 +22487,13 @@ class OpenBankingAccount(BunqModel):
         """
         :type json_str: str
         
-        :rtype: OpenBankingAccount
+        :rtype: OpenBankingAccountApiObject
         """
 
-        return converter.json_to_class(OpenBankingAccount, json_str)
+        return converter.json_to_class(OpenBankingAccountApiObject, json_str)
 
 
-class OpenBankingProviderBank(BunqModel):
+class OpenBankingProviderBankApiObject(BunqModel):
     """
     Lists open banking provider banks.
     
@@ -22643,13 +22680,13 @@ class OpenBankingProviderBank(BunqModel):
         """
         :type json_str: str
         
-        :rtype: OpenBankingProviderBank
+        :rtype: OpenBankingProviderBankApiObject
         """
 
-        return converter.json_to_class(OpenBankingProviderBank, json_str)
+        return converter.json_to_class(OpenBankingProviderBankApiObject, json_str)
 
 
-class BirdeeInvestmentPortfolio(BunqModel):
+class BirdeeInvestmentPortfolioApiObject(BunqModel):
     """
     Endpoint for interacting with the investment portfolio opened at Birdee.
     
@@ -22842,13 +22879,13 @@ class BirdeeInvestmentPortfolio(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BirdeeInvestmentPortfolio
+        :rtype: BirdeeInvestmentPortfolioApiObject
         """
 
-        return converter.json_to_class(BirdeeInvestmentPortfolio, json_str)
+        return converter.json_to_class(BirdeeInvestmentPortfolioApiObject, json_str)
 
 
-class BirdeeInvestmentPortfolioBalance(BunqModel):
+class BirdeeInvestmentPortfolioBalanceApiObject(BunqModel):
     """
     Endpoint for interacting with the birdee investment portfolio balance..
     
@@ -22969,13 +23006,13 @@ class BirdeeInvestmentPortfolioBalance(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BirdeeInvestmentPortfolioBalance
+        :rtype: BirdeeInvestmentPortfolioBalanceApiObject
         """
 
-        return converter.json_to_class(BirdeeInvestmentPortfolioBalance, json_str)
+        return converter.json_to_class(BirdeeInvestmentPortfolioBalanceApiObject, json_str)
 
 
-class BirdeePortfolioAllocation(BunqModel):
+class BirdeePortfolioAllocationApiObject(BunqModel):
     """
     Endpoint for viewing the allocations of the model portfolios Birdee offers.
     
@@ -23151,13 +23188,68 @@ class BirdeePortfolioAllocation(BunqModel):
         """
         :type json_str: str
         
-        :rtype: BirdeePortfolioAllocation
+        :rtype: BirdeePortfolioAllocationApiObject
         """
 
-        return converter.json_to_class(BirdeePortfolioAllocation, json_str)
+        return converter.json_to_class(BirdeePortfolioAllocationApiObject, json_str)
 
 
-class MonetaryAccountCard(BunqModel):
+class MonetaryAccountAccessApiObject(BunqModel):
+    """
+    You can use MonetaryAccountAccess to retrieve all
+    MonetaryAccountAccessModels for the given MonetaryAccount
+    
+    :param _access_type: The access type of the monetary account access.
+    :type _access_type: str
+    """
+
+    # Field constants.
+    FIELD_ACCESS_TYPE = "access_type"
+
+
+    _access_type = None
+    _access_type_field_for_request = None
+
+    def __init__(self, access_type=None):
+        """
+        :param access_type: The access type of the monetary account access.
+        :type access_type: str
+        """
+
+        self._access_type_field_for_request = access_type
+
+
+
+    @property
+    def access_type(self):
+        """
+        :rtype: str
+        """
+
+        return self._access_type
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._access_type is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: MonetaryAccountAccessApiObject
+        """
+
+        return converter.json_to_class(MonetaryAccountAccessApiObject, json_str)
+
+
+class MonetaryAccountCardApiObject(BunqModel):
     """
     :param _id_: The id of the MonetaryAccountCard.
     :type _id_: int
@@ -23198,7 +23290,7 @@ class MonetaryAccountCard(BunqModel):
     by the User via a share/connect.
     :type _relation_user: RelationUser
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _setting: The settings of the MonetaryAccount.
     :type _setting: object_.MonetaryAccountSetting
     :param _budget: The budgets of the MonetaryAccount.
@@ -23226,6 +23318,8 @@ class MonetaryAccountCard(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Endpoint constants.
@@ -23263,6 +23357,7 @@ class MonetaryAccountCard(BunqModel):
     _co_owner_invite = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
 
     @classmethod
     def get(cls,  monetary_account_card_id, custom_headers=None):
@@ -23468,7 +23563,7 @@ class MonetaryAccountCard(BunqModel):
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -23561,6 +23656,14 @@ class MonetaryAccountCard(BunqModel):
 
         return self._birdee_investment_portfolio
 
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
+
     def is_all_field_none(self):
         """
         :rtype: bool
@@ -23647,6 +23750,9 @@ class MonetaryAccountCard(BunqModel):
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -23654,13 +23760,13 @@ class MonetaryAccountCard(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountCard
+        :rtype: MonetaryAccountCardApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountCard, json_str)
+        return converter.json_to_class(MonetaryAccountCardApiObject, json_str)
 
 
-class MonetaryAccountExternalSavings(BunqModel):
+class MonetaryAccountExternalSavingsApiObject(BunqModel):
     """
     Endpoint for managing monetary account savings which are connected to
     external services.
@@ -23730,7 +23836,7 @@ class MonetaryAccountExternalSavings(BunqModel):
     MonetaryAccountExternalSavings.
     :type _user_id: int
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _all_auto_save_id: The ids of the AutoSave.
     :type _all_auto_save_id: list[object_.BunqId]
     :param _fulfillments: The fulfillments for this MonetaryAccount.
@@ -23753,6 +23859,8 @@ class MonetaryAccountExternalSavings(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Endpoint constants.
@@ -23808,6 +23916,7 @@ class MonetaryAccountExternalSavings(BunqModel):
     _co_owner_invite = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _currency_field_for_request = None
     _service_field_for_request = None
     _description_field_for_request = None
@@ -24234,7 +24343,7 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -24335,6 +24444,14 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
 
         return self._birdee_investment_portfolio
 
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
+
     def is_all_field_none(self):
         """
         :rtype: bool
@@ -24430,6 +24547,9 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -24437,13 +24557,13 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountExternalSavings
+        :rtype: MonetaryAccountExternalSavingsApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountExternalSavings, json_str)
+        return converter.json_to_class(MonetaryAccountExternalSavingsApiObject, json_str)
 
 
-class MonetaryAccountExternal(BunqModel):
+class MonetaryAccountExternalApiObject(BunqModel):
     """
     Endpoint for managing monetary accounts which are connected to external
     services.
@@ -24509,7 +24629,7 @@ class MonetaryAccountExternal(BunqModel):
     :param _user_id: The id of the User who owns the MonetaryAccountExternal.
     :type _user_id: int
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _all_auto_save_id: The ids of the AutoSave.
     :type _all_auto_save_id: list[object_.BunqId]
     :param _fulfillments: The fulfillments for this MonetaryAccount.
@@ -24526,6 +24646,8 @@ class MonetaryAccountExternal(BunqModel):
     :type _co_owner_invite: CoOwnerInviteResponse
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Endpoint constants.
@@ -24579,6 +24701,7 @@ class MonetaryAccountExternal(BunqModel):
     _all_co_owner = None
     _co_owner_invite = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _currency_field_for_request = None
     _service_field_for_request = None
     _description_field_for_request = None
@@ -24994,7 +25117,7 @@ cls.FIELD_SETTING : setting
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -25078,6 +25201,14 @@ cls.FIELD_SETTING : setting
         """
 
         return self._birdee_investment_portfolio
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     def is_all_field_none(self):
         """
@@ -25171,6 +25302,9 @@ cls.FIELD_SETTING : setting
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -25178,13 +25312,13 @@ cls.FIELD_SETTING : setting
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountExternal
+        :rtype: MonetaryAccountExternalApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountExternal, json_str)
+        return converter.json_to_class(MonetaryAccountExternalApiObject, json_str)
 
 
-class MonetaryAccountJoint(BunqModel):
+class MonetaryAccountJointApiObject(BunqModel):
     """
     The endpoint for joint monetary accounts.
     
@@ -25245,7 +25379,7 @@ class MonetaryAccountJoint(BunqModel):
     :param _user_id: The id of the User who owns the MonetaryAccountJoint.
     :type _user_id: int
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _all_auto_save_id: The ids of the AutoSave.
     :type _all_auto_save_id: list[object_.BunqId]
     :param _fulfillments: The fulfillments for this MonetaryAccount.
@@ -25260,6 +25394,8 @@ class MonetaryAccountJoint(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Endpoint constants.
@@ -25312,6 +25448,7 @@ class MonetaryAccountJoint(BunqModel):
     _budget = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _currency_field_for_request = None
     _description_field_for_request = None
     _daily_limit_field_for_request = None
@@ -25735,7 +25872,7 @@ cls.FIELD_SETTING : setting
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -25795,6 +25932,14 @@ cls.FIELD_SETTING : setting
         """
 
         return self._birdee_investment_portfolio
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     def is_all_field_none(self):
         """
@@ -25882,6 +26027,9 @@ cls.FIELD_SETTING : setting
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -25889,13 +26037,13 @@ cls.FIELD_SETTING : setting
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountJoint
+        :rtype: MonetaryAccountJointApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountJoint, json_str)
+        return converter.json_to_class(MonetaryAccountJointApiObject, json_str)
 
 
-class MonetaryAccountSavings(BunqModel):
+class MonetaryAccountSavingsApiObject(BunqModel):
     """
     With MonetaryAccountSavings you can create a new savings account.
     
@@ -25955,7 +26103,7 @@ class MonetaryAccountSavings(BunqModel):
     :param _user_id: The id of the User who owns the MonetaryAccountSavings.
     :type _user_id: int
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _savings_goal_progress: The progress in percentages for the Savings
     Goal set for this MonetaryAccountSavings.
     :type _savings_goal_progress: float
@@ -25976,6 +26124,8 @@ class MonetaryAccountSavings(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Endpoint constants.
@@ -26029,6 +26179,7 @@ class MonetaryAccountSavings(BunqModel):
     _budget = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _currency_field_for_request = None
     _description_field_for_request = None
     _daily_limit_field_for_request = None
@@ -26450,7 +26601,7 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -26534,6 +26685,14 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
         """
 
         return self._birdee_investment_portfolio
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     def is_all_field_none(self):
         """
@@ -26627,6 +26786,9 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -26634,13 +26796,13 @@ cls.FIELD_SAVINGS_GOAL : savings_goal
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountSavings
+        :rtype: MonetaryAccountSavingsApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountSavings, json_str)
+        return converter.json_to_class(MonetaryAccountSavingsApiObject, json_str)
 
 
-class MonetaryAccount(BunqModel):
+class MonetaryAccountApiObject(BunqModel):
     """
     Used to show the MonetaryAccounts that you can access. Currently the only
     MonetaryAccount type is MonetaryAccountBank. See also:
@@ -26654,7 +26816,7 @@ class MonetaryAccount(BunqModel):
     MonetaryAccount.
     :type _balance: object_.Amount
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _setting: The settings of the MonetaryAccount.
     :type _setting: object_.MonetaryAccountSetting
     :param _budget: The budgets of the MonetaryAccount.
@@ -26685,6 +26847,8 @@ class MonetaryAccount(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     :param _MonetaryAccountLight: 
     :type _MonetaryAccountLight: MonetaryAccountLight
     :param _MonetaryAccountBank: 
@@ -26727,6 +26891,7 @@ class MonetaryAccount(BunqModel):
     _co_owner_invite = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _MonetaryAccountLight = None
     _MonetaryAccountBank = None
     _MonetaryAccountExternal = None
@@ -26806,7 +26971,7 @@ class MonetaryAccount(BunqModel):
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -26906,6 +27071,14 @@ class MonetaryAccount(BunqModel):
         """
 
         return self._birdee_investment_portfolio
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     @property
     def MonetaryAccountLight(self):
@@ -27029,6 +27202,9 @@ class MonetaryAccount(BunqModel):
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         if self._MonetaryAccountLight is not None:
             return False
 
@@ -27063,13 +27239,13 @@ class MonetaryAccount(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccount
+        :rtype: MonetaryAccountApiObject
         """
 
-        return converter.json_to_class(MonetaryAccount, json_str)
+        return converter.json_to_class(MonetaryAccountApiObject, json_str)
 
 
-class MonetaryAccountLight(BunqModel):
+class MonetaryAccountLightApiObject(BunqModel):
     """
     With MonetaryAccountLight is a monetary account for bunq light users.
     Through this endpoint you can retrieve information regarding your existing
@@ -27148,7 +27324,7 @@ class MonetaryAccountLight(BunqModel):
     :param _fulfillments: The fulfillments for this MonetaryAccount.
     :type _fulfillments: list[Fulfillment]
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _budget: The budgets of the MonetaryAccount.
     :type _budget: list[MonetaryAccountBudget]
     :param _all_auto_save_id: The ids of the AutoSave.
@@ -27163,6 +27339,8 @@ class MonetaryAccountLight(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Field constants.
@@ -27210,6 +27388,7 @@ class MonetaryAccountLight(BunqModel):
     _co_owner_invite = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
     _currency_field_for_request = None
     _description_field_for_request = None
     _daily_limit_field_for_request = None
@@ -27481,7 +27660,7 @@ class MonetaryAccountLight(BunqModel):
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -27533,6 +27712,14 @@ class MonetaryAccountLight(BunqModel):
         """
 
         return self._birdee_investment_portfolio
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     def is_all_field_none(self):
         """
@@ -27638,6 +27825,9 @@ class MonetaryAccountLight(BunqModel):
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -27645,13 +27835,13 @@ class MonetaryAccountLight(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountLight
+        :rtype: MonetaryAccountLightApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountLight, json_str)
+        return converter.json_to_class(MonetaryAccountLightApiObject, json_str)
 
 
-class MonetaryAccountInvestment(BunqModel):
+class MonetaryAccountInvestmentApiObject(BunqModel):
     """
     Endpoint for managing investment monetary accounts.
     
@@ -27722,7 +27912,7 @@ class MonetaryAccountInvestment(BunqModel):
     :param _user_id: The id of the User who owns the MonetaryAccountInvestment.
     :type _user_id: int
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _all_auto_save_id: The ids of the AutoSave.
     :type _all_auto_save_id: list[object_.BunqId]
     :param _fulfillments: The fulfillments for this MonetaryAccount.
@@ -27737,6 +27927,8 @@ class MonetaryAccountInvestment(BunqModel):
     :param _open_banking_account: The open banking account for information about
     the external account.
     :type _open_banking_account: OpenBankingAccount
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     # Field constants.
@@ -27783,6 +27975,7 @@ class MonetaryAccountInvestment(BunqModel):
     _all_co_owner = None
     _co_owner_invite = None
     _open_banking_account = None
+    _all_access = None
     _currency_field_for_request = None
     _provider_field_for_request = None
     _description_field_for_request = None
@@ -28006,7 +28199,7 @@ class MonetaryAccountInvestment(BunqModel):
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -28082,6 +28275,14 @@ class MonetaryAccountInvestment(BunqModel):
         """
 
         return self._open_banking_account
+
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
 
     def is_all_field_none(self):
         """
@@ -28169,6 +28370,9 @@ class MonetaryAccountInvestment(BunqModel):
         if self._open_banking_account is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -28176,13 +28380,13 @@ class MonetaryAccountInvestment(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountInvestment
+        :rtype: MonetaryAccountInvestmentApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountInvestment, json_str)
+        return converter.json_to_class(MonetaryAccountInvestmentApiObject, json_str)
 
 
-class MonetaryAccountSwitchService(BunqModel):
+class MonetaryAccountSwitchServiceApiObject(BunqModel):
     """
     View for MonetaryAccountSwitchService
     
@@ -28202,7 +28406,7 @@ class MonetaryAccountSwitchService(BunqModel):
     MonetaryAccount.
     :type _balance: object_.Amount
     :param _monetary_account_profile: The profiles of the account.
-    :type _monetary_account_profile: list[MonetaryAccountProfile]
+    :type _monetary_account_profile: MonetaryAccountProfile
     :param _setting: The settings of the MonetaryAccount.
     :type _setting: object_.MonetaryAccountSetting
     :param _budget: The budgets of the MonetaryAccount.
@@ -28233,6 +28437,8 @@ class MonetaryAccountSwitchService(BunqModel):
     :type _open_banking_account: OpenBankingAccount
     :param _birdee_investment_portfolio: The Birdee investment portfolio.
     :type _birdee_investment_portfolio: BirdeeInvestmentPortfolio
+    :param _all_access: The access of this Monetary Account.
+    :type _all_access: list[MonetaryAccountAccess]
     """
 
     _id_ = None
@@ -28255,6 +28461,7 @@ class MonetaryAccountSwitchService(BunqModel):
     _co_owner_invite = None
     _open_banking_account = None
     _birdee_investment_portfolio = None
+    _all_access = None
 
     @property
     def id_(self):
@@ -28315,7 +28522,7 @@ class MonetaryAccountSwitchService(BunqModel):
     @property
     def monetary_account_profile(self):
         """
-        :rtype: list[MonetaryAccountProfile]
+        :rtype: MonetaryAccountProfile
         """
 
         return self._monetary_account_profile
@@ -28416,6 +28623,14 @@ class MonetaryAccountSwitchService(BunqModel):
 
         return self._birdee_investment_portfolio
 
+    @property
+    def all_access(self):
+        """
+        :rtype: list[MonetaryAccountAccess]
+        """
+
+        return self._all_access
+
     def is_all_field_none(self):
         """
         :rtype: bool
@@ -28481,6 +28696,9 @@ class MonetaryAccountSwitchService(BunqModel):
         if self._birdee_investment_portfolio is not None:
             return False
 
+        if self._all_access is not None:
+            return False
+
         return True
 
     @staticmethod
@@ -28488,13 +28706,13 @@ class MonetaryAccountSwitchService(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MonetaryAccountSwitchService
+        :rtype: MonetaryAccountSwitchServiceApiObject
         """
 
-        return converter.json_to_class(MonetaryAccountSwitchService, json_str)
+        return converter.json_to_class(MonetaryAccountSwitchServiceApiObject, json_str)
 
 
-class NoteAttachmentAdyenCardTransaction(BunqModel):
+class NoteAttachmentAdyenCardTransactionApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -28769,13 +28987,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentAdyenCardTransaction
+        :rtype: NoteAttachmentAdyenCardTransactionApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentAdyenCardTransaction, json_str)
+        return converter.json_to_class(NoteAttachmentAdyenCardTransactionApiObject, json_str)
 
 
-class NoteTextAdyenCardTransaction(BunqModel):
+class NoteTextAdyenCardTransactionApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -29023,13 +29241,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextAdyenCardTransaction
+        :rtype: NoteTextAdyenCardTransactionApiObject
         """
 
-        return converter.json_to_class(NoteTextAdyenCardTransaction, json_str)
+        return converter.json_to_class(NoteTextAdyenCardTransactionApiObject, json_str)
 
 
-class NoteAttachmentBankSwitchServiceNetherlandsIncomingPayment(BunqModel):
+class NoteAttachmentBankSwitchServiceNetherlandsIncomingPaymentApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -29311,13 +29529,14 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentBankSwitchServiceNetherlandsIncomingPayment
+        :rtype:
+        NoteAttachmentBankSwitchServiceNetherlandsIncomingPaymentApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentBankSwitchServiceNetherlandsIncomingPayment, json_str)
+        return converter.json_to_class(NoteAttachmentBankSwitchServiceNetherlandsIncomingPaymentApiObject, json_str)
 
 
-class NoteTextBankSwitchServiceNetherlandsIncomingPayment(BunqModel):
+class NoteTextBankSwitchServiceNetherlandsIncomingPaymentApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -29568,13 +29787,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextBankSwitchServiceNetherlandsIncomingPayment
+        :rtype: NoteTextBankSwitchServiceNetherlandsIncomingPaymentApiObject
         """
 
-        return converter.json_to_class(NoteTextBankSwitchServiceNetherlandsIncomingPayment, json_str)
+        return converter.json_to_class(NoteTextBankSwitchServiceNetherlandsIncomingPaymentApiObject, json_str)
 
 
-class NoteAttachmentBunqMeFundraiserResult(BunqModel):
+class NoteAttachmentBunqMeFundraiserResultApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -29851,13 +30070,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentBunqMeFundraiserResult
+        :rtype: NoteAttachmentBunqMeFundraiserResultApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentBunqMeFundraiserResult, json_str)
+        return converter.json_to_class(NoteAttachmentBunqMeFundraiserResultApiObject, json_str)
 
 
-class NoteTextBunqMeFundraiserResult(BunqModel):
+class NoteTextBunqMeFundraiserResultApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -30107,13 +30326,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextBunqMeFundraiserResult
+        :rtype: NoteTextBunqMeFundraiserResultApiObject
         """
 
-        return converter.json_to_class(NoteTextBunqMeFundraiserResult, json_str)
+        return converter.json_to_class(NoteTextBunqMeFundraiserResultApiObject, json_str)
 
 
-class NoteAttachmentDraftPayment(BunqModel):
+class NoteAttachmentDraftPaymentApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -30390,13 +30609,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentDraftPayment
+        :rtype: NoteAttachmentDraftPaymentApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentDraftPayment, json_str)
+        return converter.json_to_class(NoteAttachmentDraftPaymentApiObject, json_str)
 
 
-class NoteTextDraftPayment(BunqModel):
+class NoteTextDraftPaymentApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -30646,13 +30865,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextDraftPayment
+        :rtype: NoteTextDraftPaymentApiObject
         """
 
-        return converter.json_to_class(NoteTextDraftPayment, json_str)
+        return converter.json_to_class(NoteTextDraftPaymentApiObject, json_str)
 
 
-class NoteAttachmentIdealMerchantTransaction(BunqModel):
+class NoteAttachmentIdealMerchantTransactionApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -30929,13 +31148,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentIdealMerchantTransaction
+        :rtype: NoteAttachmentIdealMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentIdealMerchantTransaction, json_str)
+        return converter.json_to_class(NoteAttachmentIdealMerchantTransactionApiObject, json_str)
 
 
-class NoteTextIdealMerchantTransaction(BunqModel):
+class NoteTextIdealMerchantTransactionApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -31185,13 +31404,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextIdealMerchantTransaction
+        :rtype: NoteTextIdealMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(NoteTextIdealMerchantTransaction, json_str)
+        return converter.json_to_class(NoteTextIdealMerchantTransactionApiObject, json_str)
 
 
-class NoteAttachmentMasterCardAction(BunqModel):
+class NoteAttachmentMasterCardActionApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -31468,13 +31687,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentMasterCardAction
+        :rtype: NoteAttachmentMasterCardActionApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentMasterCardAction, json_str)
+        return converter.json_to_class(NoteAttachmentMasterCardActionApiObject, json_str)
 
 
-class NoteTextMasterCardAction(BunqModel):
+class NoteTextMasterCardActionApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -31724,13 +31943,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextMasterCardAction
+        :rtype: NoteTextMasterCardActionApiObject
         """
 
-        return converter.json_to_class(NoteTextMasterCardAction, json_str)
+        return converter.json_to_class(NoteTextMasterCardActionApiObject, json_str)
 
 
-class NoteAttachmentOpenBankingMerchantTransaction(BunqModel):
+class NoteAttachmentOpenBankingMerchantTransactionApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -32005,13 +32224,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentOpenBankingMerchantTransaction
+        :rtype: NoteAttachmentOpenBankingMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentOpenBankingMerchantTransaction, json_str)
+        return converter.json_to_class(NoteAttachmentOpenBankingMerchantTransactionApiObject, json_str)
 
 
-class NoteTextOpenBankingMerchantTransaction(BunqModel):
+class NoteTextOpenBankingMerchantTransactionApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -32259,13 +32478,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextOpenBankingMerchantTransaction
+        :rtype: NoteTextOpenBankingMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(NoteTextOpenBankingMerchantTransaction, json_str)
+        return converter.json_to_class(NoteTextOpenBankingMerchantTransactionApiObject, json_str)
 
 
-class NoteAttachmentPaymentBatch(BunqModel):
+class NoteAttachmentPaymentBatchApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -32542,13 +32761,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentPaymentBatch
+        :rtype: NoteAttachmentPaymentBatchApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentPaymentBatch, json_str)
+        return converter.json_to_class(NoteAttachmentPaymentBatchApiObject, json_str)
 
 
-class NoteTextPaymentBatch(BunqModel):
+class NoteTextPaymentBatchApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -32798,13 +33017,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextPaymentBatch
+        :rtype: NoteTextPaymentBatchApiObject
         """
 
-        return converter.json_to_class(NoteTextPaymentBatch, json_str)
+        return converter.json_to_class(NoteTextPaymentBatchApiObject, json_str)
 
 
-class NoteAttachmentPaymentDelayed(BunqModel):
+class NoteAttachmentPaymentDelayedApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -33079,13 +33298,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentPaymentDelayed
+        :rtype: NoteAttachmentPaymentDelayedApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentPaymentDelayed, json_str)
+        return converter.json_to_class(NoteAttachmentPaymentDelayedApiObject, json_str)
 
 
-class NoteTextPaymentDelayed(BunqModel):
+class NoteTextPaymentDelayedApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -33333,13 +33552,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextPaymentDelayed
+        :rtype: NoteTextPaymentDelayedApiObject
         """
 
-        return converter.json_to_class(NoteTextPaymentDelayed, json_str)
+        return converter.json_to_class(NoteTextPaymentDelayedApiObject, json_str)
 
 
-class NoteAttachmentPayment(BunqModel):
+class NoteAttachmentPaymentApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -33616,13 +33835,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentPayment
+        :rtype: NoteAttachmentPaymentApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentPayment, json_str)
+        return converter.json_to_class(NoteAttachmentPaymentApiObject, json_str)
 
 
-class NoteTextPayment(BunqModel):
+class NoteTextPaymentApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -33872,13 +34091,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextPayment
+        :rtype: NoteTextPaymentApiObject
         """
 
-        return converter.json_to_class(NoteTextPayment, json_str)
+        return converter.json_to_class(NoteTextPaymentApiObject, json_str)
 
 
-class NoteAttachmentRequestInquiryBatch(BunqModel):
+class NoteAttachmentRequestInquiryBatchApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -34155,13 +34374,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentRequestInquiryBatch
+        :rtype: NoteAttachmentRequestInquiryBatchApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentRequestInquiryBatch, json_str)
+        return converter.json_to_class(NoteAttachmentRequestInquiryBatchApiObject, json_str)
 
 
-class NoteTextRequestInquiryBatch(BunqModel):
+class NoteTextRequestInquiryBatchApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -34411,13 +34630,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextRequestInquiryBatch
+        :rtype: NoteTextRequestInquiryBatchApiObject
         """
 
-        return converter.json_to_class(NoteTextRequestInquiryBatch, json_str)
+        return converter.json_to_class(NoteTextRequestInquiryBatchApiObject, json_str)
 
 
-class NoteAttachmentRequestInquiry(BunqModel):
+class NoteAttachmentRequestInquiryApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -34694,13 +34913,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentRequestInquiry
+        :rtype: NoteAttachmentRequestInquiryApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentRequestInquiry, json_str)
+        return converter.json_to_class(NoteAttachmentRequestInquiryApiObject, json_str)
 
 
-class NoteTextRequestInquiry(BunqModel):
+class NoteTextRequestInquiryApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -34950,13 +35169,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextRequestInquiry
+        :rtype: NoteTextRequestInquiryApiObject
         """
 
-        return converter.json_to_class(NoteTextRequestInquiry, json_str)
+        return converter.json_to_class(NoteTextRequestInquiryApiObject, json_str)
 
 
-class NoteAttachmentRequestResponse(BunqModel):
+class NoteAttachmentRequestResponseApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -35233,13 +35452,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentRequestResponse
+        :rtype: NoteAttachmentRequestResponseApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentRequestResponse, json_str)
+        return converter.json_to_class(NoteAttachmentRequestResponseApiObject, json_str)
 
 
-class NoteTextRequestResponse(BunqModel):
+class NoteTextRequestResponseApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -35489,13 +35708,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextRequestResponse
+        :rtype: NoteTextRequestResponseApiObject
         """
 
-        return converter.json_to_class(NoteTextRequestResponse, json_str)
+        return converter.json_to_class(NoteTextRequestResponseApiObject, json_str)
 
 
-class NoteAttachmentScheduleInstance(BunqModel):
+class NoteAttachmentScheduleInstanceApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -35777,13 +35996,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentScheduleInstance
+        :rtype: NoteAttachmentScheduleInstanceApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentScheduleInstance, json_str)
+        return converter.json_to_class(NoteAttachmentScheduleInstanceApiObject, json_str)
 
 
-class NoteTextScheduleInstance(BunqModel):
+class NoteTextScheduleInstanceApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -36038,13 +36257,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextScheduleInstance
+        :rtype: NoteTextScheduleInstanceApiObject
         """
 
-        return converter.json_to_class(NoteTextScheduleInstance, json_str)
+        return converter.json_to_class(NoteTextScheduleInstanceApiObject, json_str)
 
 
-class NoteAttachmentSchedulePaymentBatch(BunqModel):
+class NoteAttachmentSchedulePaymentBatchApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -36321,13 +36540,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentSchedulePaymentBatch
+        :rtype: NoteAttachmentSchedulePaymentBatchApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentSchedulePaymentBatch, json_str)
+        return converter.json_to_class(NoteAttachmentSchedulePaymentBatchApiObject, json_str)
 
 
-class NoteTextSchedulePaymentBatch(BunqModel):
+class NoteTextSchedulePaymentBatchApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -36577,13 +36796,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextSchedulePaymentBatch
+        :rtype: NoteTextSchedulePaymentBatchApiObject
         """
 
-        return converter.json_to_class(NoteTextSchedulePaymentBatch, json_str)
+        return converter.json_to_class(NoteTextSchedulePaymentBatchApiObject, json_str)
 
 
-class NoteAttachmentSchedulePayment(BunqModel):
+class NoteAttachmentSchedulePaymentApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -36860,13 +37079,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentSchedulePayment
+        :rtype: NoteAttachmentSchedulePaymentApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentSchedulePayment, json_str)
+        return converter.json_to_class(NoteAttachmentSchedulePaymentApiObject, json_str)
 
 
-class NoteTextSchedulePayment(BunqModel):
+class NoteTextSchedulePaymentApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -37116,13 +37335,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextSchedulePayment
+        :rtype: NoteTextSchedulePaymentApiObject
         """
 
-        return converter.json_to_class(NoteTextSchedulePayment, json_str)
+        return converter.json_to_class(NoteTextSchedulePaymentApiObject, json_str)
 
 
-class NoteAttachmentScheduleRequestBatch(BunqModel):
+class NoteAttachmentScheduleRequestBatchApiObject(BunqModel):
     """
     Used to manage attachment notes for a scheduled request.
     
@@ -37399,13 +37618,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentScheduleRequestBatch
+        :rtype: NoteAttachmentScheduleRequestBatchApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentScheduleRequestBatch, json_str)
+        return converter.json_to_class(NoteAttachmentScheduleRequestBatchApiObject, json_str)
 
 
-class NoteTextScheduleRequestBatch(BunqModel):
+class NoteTextScheduleRequestBatchApiObject(BunqModel):
     """
     Used to manage text notes for a scheduled request.
     
@@ -37655,13 +37874,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextScheduleRequestBatch
+        :rtype: NoteTextScheduleRequestBatchApiObject
         """
 
-        return converter.json_to_class(NoteTextScheduleRequestBatch, json_str)
+        return converter.json_to_class(NoteTextScheduleRequestBatchApiObject, json_str)
 
 
-class NoteAttachmentScheduleRequest(BunqModel):
+class NoteAttachmentScheduleRequestApiObject(BunqModel):
     """
     Used to manage attachment notes for a scheduled request.
     
@@ -37938,13 +38157,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentScheduleRequest
+        :rtype: NoteAttachmentScheduleRequestApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentScheduleRequest, json_str)
+        return converter.json_to_class(NoteAttachmentScheduleRequestApiObject, json_str)
 
 
-class NoteTextScheduleRequest(BunqModel):
+class NoteTextScheduleRequestApiObject(BunqModel):
     """
     Used to manage text notes for a scheduled request.
     
@@ -38194,13 +38413,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextScheduleRequest
+        :rtype: NoteTextScheduleRequestApiObject
         """
 
-        return converter.json_to_class(NoteTextScheduleRequest, json_str)
+        return converter.json_to_class(NoteTextScheduleRequestApiObject, json_str)
 
 
-class NoteAttachmentSofortMerchantTransaction(BunqModel):
+class NoteAttachmentSofortMerchantTransactionApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -38477,13 +38696,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentSofortMerchantTransaction
+        :rtype: NoteAttachmentSofortMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentSofortMerchantTransaction, json_str)
+        return converter.json_to_class(NoteAttachmentSofortMerchantTransactionApiObject, json_str)
 
 
-class NoteTextSofortMerchantTransaction(BunqModel):
+class NoteTextSofortMerchantTransactionApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -38733,13 +38952,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextSofortMerchantTransaction
+        :rtype: NoteTextSofortMerchantTransactionApiObject
         """
 
-        return converter.json_to_class(NoteTextSofortMerchantTransaction, json_str)
+        return converter.json_to_class(NoteTextSofortMerchantTransactionApiObject, json_str)
 
 
-class NoteAttachmentWhitelistResult(BunqModel):
+class NoteAttachmentWhitelistResultApiObject(BunqModel):
     """
     Used to manage attachment notes.
     
@@ -39021,13 +39240,13 @@ cls.FIELD_DESCRIPTION : description
         """
         :type json_str: str
         
-        :rtype: NoteAttachmentWhitelistResult
+        :rtype: NoteAttachmentWhitelistResultApiObject
         """
 
-        return converter.json_to_class(NoteAttachmentWhitelistResult, json_str)
+        return converter.json_to_class(NoteAttachmentWhitelistResultApiObject, json_str)
 
 
-class NoteTextWhitelistResult(BunqModel):
+class NoteTextWhitelistResultApiObject(BunqModel):
     """
     Used to manage text notes.
     
@@ -39282,13 +39501,13 @@ cls.FIELD_CONTENT : content
         """
         :type json_str: str
         
-        :rtype: NoteTextWhitelistResult
+        :rtype: NoteTextWhitelistResultApiObject
         """
 
-        return converter.json_to_class(NoteTextWhitelistResult, json_str)
+        return converter.json_to_class(NoteTextWhitelistResultApiObject, json_str)
 
 
-class NotificationFilterEmail(BunqModel):
+class NotificationFilterEmailApiObject(BunqModel):
     """
     Manage the email notification filters for a user.
     
@@ -39397,13 +39616,13 @@ cls.FIELD_NOTIFICATION_FILTERS : notification_filters
         """
         :type json_str: str
         
-        :rtype: NotificationFilterEmail
+        :rtype: NotificationFilterEmailApiObject
         """
 
-        return converter.json_to_class(NotificationFilterEmail, json_str)
+        return converter.json_to_class(NotificationFilterEmailApiObject, json_str)
 
 
-class NotificationFilterFailure(BunqModel):
+class NotificationFilterFailureApiObject(BunqModel):
     """
     Manage the url notification filters for a user.
     
@@ -39584,13 +39803,13 @@ cls.FIELD_NOTIFICATION_FILTER_FAILED_IDS : notification_filter_failed_ids
         """
         :type json_str: str
         
-        :rtype: NotificationFilterFailure
+        :rtype: NotificationFilterFailureApiObject
         """
 
-        return converter.json_to_class(NotificationFilterFailure, json_str)
+        return converter.json_to_class(NotificationFilterFailureApiObject, json_str)
 
 
-class NotificationFilterPush(BunqModel):
+class NotificationFilterPushApiObject(BunqModel):
     """
     Manage the push notification filters for a user.
     
@@ -39699,13 +39918,13 @@ cls.FIELD_NOTIFICATION_FILTERS : notification_filters
         """
         :type json_str: str
         
-        :rtype: NotificationFilterPush
+        :rtype: NotificationFilterPushApiObject
         """
 
-        return converter.json_to_class(NotificationFilterPush, json_str)
+        return converter.json_to_class(NotificationFilterPushApiObject, json_str)
 
 
-class NotificationFilterUrl(BunqModel):
+class NotificationFilterUrlApiObject(BunqModel):
     """
     Manage the url notification filters for a user.
     
@@ -39813,13 +40032,13 @@ cls.FIELD_NOTIFICATION_FILTERS : notification_filters
         """
         :type json_str: str
         
-        :rtype: NotificationFilterUrl
+        :rtype: NotificationFilterUrlApiObject
         """
 
-        return converter.json_to_class(NotificationFilterUrl, json_str)
+        return converter.json_to_class(NotificationFilterUrlApiObject, json_str)
 
 
-class NotificationFilterUrlMonetaryAccount(BunqModel):
+class NotificationFilterUrlMonetaryAccountApiObject(BunqModel):
     """
     Manage the url notification filters for a user.
     
@@ -39929,13 +40148,13 @@ cls.FIELD_NOTIFICATION_FILTERS : notification_filters
         """
         :type json_str: str
         
-        :rtype: NotificationFilterUrlMonetaryAccount
+        :rtype: NotificationFilterUrlMonetaryAccountApiObject
         """
 
-        return converter.json_to_class(NotificationFilterUrlMonetaryAccount, json_str)
+        return converter.json_to_class(NotificationFilterUrlMonetaryAccountApiObject, json_str)
 
 
-class ChatMessage(BunqModel):
+class ChatMessageApiObject(BunqModel):
     """
     Endpoint for retrieving the messages that are part of a conversation.
     """
@@ -39953,13 +40172,13 @@ class ChatMessage(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ChatMessage
+        :rtype: ChatMessageApiObject
         """
 
-        return converter.json_to_class(ChatMessage, json_str)
+        return converter.json_to_class(ChatMessageApiObject, json_str)
 
 
-class User(BunqModel, AnchorObjectInterface):
+class UserApiObject(BunqModel, AnchorObjectInterface):
     """
     Using this call you can retrieve information of the user you are logged in
     as. This includes your user id, which is referred to in endpoints.
@@ -40112,13 +40331,13 @@ class User(BunqModel, AnchorObjectInterface):
         """
         :type json_str: str
         
-        :rtype: User
+        :rtype: UserApiObject
         """
 
-        return converter.json_to_class(User, json_str)
+        return converter.json_to_class(UserApiObject, json_str)
 
 
-class UserPerson(BunqModel):
+class UserPersonApiObject(BunqModel):
     """
     With UserPerson you can retrieve information regarding the authenticated
     UserPerson and update specific fields.<br/><br/>Notification filters can be
@@ -40925,13 +41144,13 @@ cls.FIELD_DISPLAY_NAME : display_name
         """
         :type json_str: str
         
-        :rtype: UserPerson
+        :rtype: UserPersonApiObject
         """
 
-        return converter.json_to_class(UserPerson, json_str)
+        return converter.json_to_class(UserPersonApiObject, json_str)
 
 
-class UserApiKey(BunqModel):
+class UserApiKeyApiObject(BunqModel):
     """
     Used to view OAuth request detais in events.
     
@@ -41020,13 +41239,13 @@ class UserApiKey(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserApiKey
+        :rtype: UserApiKeyApiObject
         """
 
-        return converter.json_to_class(UserApiKey, json_str)
+        return converter.json_to_class(UserApiKeyApiObject, json_str)
 
 
-class UserPaymentServiceProvider(BunqModel):
+class UserPaymentServiceProviderApiObject(BunqModel):
     """
     Used to view UserPaymentServiceProvider for session creation.
     
@@ -41273,13 +41492,13 @@ class UserPaymentServiceProvider(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserPaymentServiceProvider
+        :rtype: UserPaymentServiceProviderApiObject
         """
 
-        return converter.json_to_class(UserPaymentServiceProvider, json_str)
+        return converter.json_to_class(UserPaymentServiceProviderApiObject, json_str)
 
 
-class OauthCallbackUrl(BunqModel):
+class OauthCallbackUrlApiObject(BunqModel):
     """
     Used for managing OAuth Client Callback URLs.
     
@@ -41466,13 +41685,13 @@ cls.FIELD_URL : url
         """
         :type json_str: str
         
-        :rtype: OauthCallbackUrl
+        :rtype: OauthCallbackUrlApiObject
         """
 
-        return converter.json_to_class(OauthCallbackUrl, json_str)
+        return converter.json_to_class(OauthCallbackUrlApiObject, json_str)
 
 
-class OauthClient(BunqModel):
+class OauthClientApiObject(BunqModel):
     """
     Used for managing OAuth Clients.
     
@@ -41705,13 +41924,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: OauthClient
+        :rtype: OauthClientApiObject
         """
 
-        return converter.json_to_class(OauthClient, json_str)
+        return converter.json_to_class(OauthClientApiObject, json_str)
 
 
-class PaymentAutoAllocateDefinition(BunqModel):
+class PaymentAutoAllocateDefinitionApiObject(BunqModel):
     """
     List all the definitions in a payment auto allocate.
     
@@ -41900,13 +42119,13 @@ class PaymentAutoAllocateDefinition(BunqModel):
         """
         :type json_str: str
         
-        :rtype: PaymentAutoAllocateDefinition
+        :rtype: PaymentAutoAllocateDefinitionApiObject
         """
 
-        return converter.json_to_class(PaymentAutoAllocateDefinition, json_str)
+        return converter.json_to_class(PaymentAutoAllocateDefinitionApiObject, json_str)
 
 
-class PaymentAutoAllocate(BunqModel):
+class PaymentAutoAllocateApiObject(BunqModel):
     """
     Manage a users automatic payment auto allocated settings.
     
@@ -42233,13 +42452,13 @@ cls.FIELD_DEFINITION : definition
         """
         :type json_str: str
         
-        :rtype: PaymentAutoAllocate
+        :rtype: PaymentAutoAllocateApiObject
         """
 
-        return converter.json_to_class(PaymentAutoAllocate, json_str)
+        return converter.json_to_class(PaymentAutoAllocateApiObject, json_str)
 
 
-class PaymentAutoAllocateUser(BunqModel, AnchorObjectInterface):
+class PaymentAutoAllocateUserApiObject(BunqModel, AnchorObjectInterface):
     """
     List a users automatic payment auto allocated settings.
     
@@ -42315,13 +42534,13 @@ class PaymentAutoAllocateUser(BunqModel, AnchorObjectInterface):
         """
         :type json_str: str
         
-        :rtype: PaymentAutoAllocateUser
+        :rtype: PaymentAutoAllocateUserApiObject
         """
 
-        return converter.json_to_class(PaymentAutoAllocateUser, json_str)
+        return converter.json_to_class(PaymentAutoAllocateUserApiObject, json_str)
 
 
-class PaymentServiceProviderCredential(BunqModel):
+class PaymentServiceProviderCredentialApiObject(BunqModel):
     """
     Register a Payment Service Provider and provide credentials
     
@@ -42546,13 +42765,13 @@ cls.FIELD_CLIENT_PUBLIC_KEY_SIGNATURE : client_public_key_signature
         """
         :type json_str: str
         
-        :rtype: PaymentServiceProviderCredential
+        :rtype: PaymentServiceProviderCredentialApiObject
         """
 
-        return converter.json_to_class(PaymentServiceProviderCredential, json_str)
+        return converter.json_to_class(PaymentServiceProviderCredentialApiObject, json_str)
 
 
-class PaymentServiceProviderDraftPayment(BunqModel):
+class PaymentServiceProviderDraftPaymentApiObject(BunqModel):
     """
     Manage the PaymentServiceProviderDraftPayment's for a PISP.
     
@@ -42815,13 +43034,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: PaymentServiceProviderDraftPayment
+        :rtype: PaymentServiceProviderDraftPaymentApiObject
         """
 
-        return converter.json_to_class(PaymentServiceProviderDraftPayment, json_str)
+        return converter.json_to_class(PaymentServiceProviderDraftPaymentApiObject, json_str)
 
 
-class PaymentServiceProviderIssuerTransaction(BunqModel):
+class PaymentServiceProviderIssuerTransactionApiObject(BunqModel):
     """
     The endpoint for payment service provider issuer transactions
     
@@ -43177,13 +43396,13 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: PaymentServiceProviderIssuerTransaction
+        :rtype: PaymentServiceProviderIssuerTransactionApiObject
         """
 
-        return converter.json_to_class(PaymentServiceProviderIssuerTransaction, json_str)
+        return converter.json_to_class(PaymentServiceProviderIssuerTransactionApiObject, json_str)
 
 
-class PermittedIp(BunqModel):
+class PermittedIpApiObject(BunqModel):
     """
     Manage the IPs which may be used for a credential of a user for server
     authentication.
@@ -43378,18 +43597,23 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: PermittedIp
+        :rtype: PermittedIpApiObject
         """
 
-        return converter.json_to_class(PermittedIp, json_str)
+        return converter.json_to_class(PermittedIpApiObject, json_str)
 
 
-class SandboxUserCompany(BunqModel):
+class SandboxUserCompanyApiObject(BunqModel):
     """
     Used to create a sandbox userCompany.
     
     :param _api_key: The API key of the newly created sandbox userCompany.
     :type _api_key: str
+    :param _user: The user which was created.
+    :type _user: User
+    :param _login_code: The login code which the developer can use to log into
+    their sandbox user.
+    :type _login_code: str
     """
 
     # Endpoint constants.
@@ -43399,6 +43623,8 @@ class SandboxUserCompany(BunqModel):
     _OBJECT_TYPE_POST = "ApiKey"
 
     _api_key = None
+    _user = None
+    _login_code = None
 
     @classmethod
     def create(cls, custom_headers=None):
@@ -43434,12 +43660,34 @@ class SandboxUserCompany(BunqModel):
 
         return self._api_key
 
+    @property
+    def user(self):
+        """
+        :rtype: User
+        """
+
+        return self._user
+
+    @property
+    def login_code(self):
+        """
+        :rtype: str
+        """
+
+        return self._login_code
+
     def is_all_field_none(self):
         """
         :rtype: bool
         """
 
         if self._api_key is not None:
+            return False
+
+        if self._user is not None:
+            return False
+
+        if self._login_code is not None:
             return False
 
         return True
@@ -43449,18 +43697,23 @@ class SandboxUserCompany(BunqModel):
         """
         :type json_str: str
         
-        :rtype: SandboxUserCompany
+        :rtype: SandboxUserCompanyApiObject
         """
 
-        return converter.json_to_class(SandboxUserCompany, json_str)
+        return converter.json_to_class(SandboxUserCompanyApiObject, json_str)
 
 
-class SandboxUserPerson(BunqModel):
+class SandboxUserPersonApiObject(BunqModel):
     """
     Used to create a sandbox userPerson.
     
     :param _api_key: The API key of the newly created sandbox userPerson.
     :type _api_key: str
+    :param _user: The user which was created.
+    :type _user: User
+    :param _login_code: The login code which the developer can use to log into
+    their sandbox user.
+    :type _login_code: str
     """
 
     # Endpoint constants.
@@ -43470,6 +43723,8 @@ class SandboxUserPerson(BunqModel):
     _OBJECT_TYPE_POST = "ApiKey"
 
     _api_key = None
+    _user = None
+    _login_code = None
 
     @classmethod
     def create(cls, custom_headers=None):
@@ -43505,12 +43760,34 @@ class SandboxUserPerson(BunqModel):
 
         return self._api_key
 
+    @property
+    def user(self):
+        """
+        :rtype: User
+        """
+
+        return self._user
+
+    @property
+    def login_code(self):
+        """
+        :rtype: str
+        """
+
+        return self._login_code
+
     def is_all_field_none(self):
         """
         :rtype: bool
         """
 
         if self._api_key is not None:
+            return False
+
+        if self._user is not None:
+            return False
+
+        if self._login_code is not None:
             return False
 
         return True
@@ -43520,13 +43797,13 @@ class SandboxUserPerson(BunqModel):
         """
         :type json_str: str
         
-        :rtype: SandboxUserPerson
+        :rtype: SandboxUserPersonApiObject
         """
 
-        return converter.json_to_class(SandboxUserPerson, json_str)
+        return converter.json_to_class(SandboxUserPersonApiObject, json_str)
 
 
-class ScheduleUser(BunqModel):
+class ScheduleUserApiObject(BunqModel):
     """
     view for reading the scheduled definitions.
     """
@@ -43581,13 +43858,13 @@ class ScheduleUser(BunqModel):
         """
         :type json_str: str
         
-        :rtype: ScheduleUser
+        :rtype: ScheduleUserApiObject
         """
 
-        return converter.json_to_class(ScheduleUser, json_str)
+        return converter.json_to_class(ScheduleUserApiObject, json_str)
 
 
-class Session(BunqModel):
+class SessionApiObject(BunqModel):
     """
     Endpoint for operations over the current session.
     """
@@ -43631,13 +43908,13 @@ class Session(BunqModel):
         """
         :type json_str: str
         
-        :rtype: Session
+        :rtype: SessionApiObject
         """
 
-        return converter.json_to_class(Session, json_str)
+        return converter.json_to_class(SessionApiObject, json_str)
 
 
-class TokenQrRequestIdeal(BunqModel):
+class TokenQrRequestIdealApiObject(BunqModel):
     """
     Using this call you create a request for payment from an external token
     provided with an ideal transaction. Make sure your iDEAL payments are
@@ -44005,13 +44282,13 @@ cls.FIELD_TOKEN : token
         """
         :type json_str: str
         
-        :rtype: TokenQrRequestIdeal
+        :rtype: TokenQrRequestIdealApiObject
         """
 
-        return converter.json_to_class(TokenQrRequestIdeal, json_str)
+        return converter.json_to_class(TokenQrRequestIdealApiObject, json_str)
 
 
-class TokenQrRequestSofort(BunqModel):
+class TokenQrRequestSofortApiObject(BunqModel):
     """
     Using this call you can create a SOFORT Request assigned to your User by
     providing the Token of the request.
@@ -44083,13 +44360,13 @@ cls.FIELD_TOKEN : token
         """
         :type json_str: str
         
-        :rtype: TokenQrRequestSofort
+        :rtype: TokenQrRequestSofortApiObject
         """
 
-        return converter.json_to_class(TokenQrRequestSofort, json_str)
+        return converter.json_to_class(TokenQrRequestSofortApiObject, json_str)
 
 
-class TransferwiseAccountQuote(BunqModel):
+class TransferwiseAccountQuoteApiObject(BunqModel):
     """
     Used to manage recipient accounts with Transferwise.
     
@@ -44347,13 +44624,13 @@ cls.FIELD_DETAIL : detail
         """
         :type json_str: str
         
-        :rtype: TransferwiseAccountQuote
+        :rtype: TransferwiseAccountQuoteApiObject
         """
 
-        return converter.json_to_class(TransferwiseAccountQuote, json_str)
+        return converter.json_to_class(TransferwiseAccountQuoteApiObject, json_str)
 
 
-class TransferwiseAccountRequirement(BunqModel):
+class TransferwiseAccountRequirementApiObject(BunqModel):
     """
     Used to determine the recipient account requirements for Transferwise
     transfers.
@@ -44525,13 +44802,13 @@ cls.FIELD_DETAIL : detail
         """
         :type json_str: str
         
-        :rtype: TransferwiseAccountRequirement
+        :rtype: TransferwiseAccountRequirementApiObject
         """
 
-        return converter.json_to_class(TransferwiseAccountRequirement, json_str)
+        return converter.json_to_class(TransferwiseAccountRequirementApiObject, json_str)
 
 
-class TransferwiseCurrency(BunqModel):
+class TransferwiseCurrencyApiObject(BunqModel):
     """
     Used to get a list of supported currencies for Transferwise.
     
@@ -44622,13 +44899,13 @@ class TransferwiseCurrency(BunqModel):
         """
         :type json_str: str
         
-        :rtype: TransferwiseCurrency
+        :rtype: TransferwiseCurrencyApiObject
         """
 
-        return converter.json_to_class(TransferwiseCurrency, json_str)
+        return converter.json_to_class(TransferwiseCurrencyApiObject, json_str)
 
 
-class TransferwiseQuoteTemporary(BunqModel):
+class TransferwiseQuoteTemporaryApiObject(BunqModel):
     """
     Used to get temporary quotes from Transferwise. These cannot be used to
     initiate payments
@@ -44864,13 +45141,13 @@ cls.FIELD_AMOUNT_TARGET : amount_target
         """
         :type json_str: str
         
-        :rtype: TransferwiseQuoteTemporary
+        :rtype: TransferwiseQuoteTemporaryApiObject
         """
 
-        return converter.json_to_class(TransferwiseQuoteTemporary, json_str)
+        return converter.json_to_class(TransferwiseQuoteTemporaryApiObject, json_str)
 
 
-class TransferwiseTransferRequirement(BunqModel):
+class TransferwiseTransferRequirementApiObject(BunqModel):
     """
     Used to determine the account requirements for Transferwise transfers.
     
@@ -44992,13 +45269,13 @@ cls.FIELD_DETAIL : detail
         """
         :type json_str: str
         
-        :rtype: TransferwiseTransferRequirement
+        :rtype: TransferwiseTransferRequirementApiObject
         """
 
-        return converter.json_to_class(TransferwiseTransferRequirement, json_str)
+        return converter.json_to_class(TransferwiseTransferRequirementApiObject, json_str)
 
 
-class TransferwiseUser(BunqModel):
+class TransferwiseUserApiObject(BunqModel):
     """
     Used to manage Transferwise users.
     
@@ -45178,13 +45455,13 @@ cls.FIELD_OAUTH_CODE : oauth_code
         """
         :type json_str: str
         
-        :rtype: TransferwiseUser
+        :rtype: TransferwiseUserApiObject
         """
 
-        return converter.json_to_class(TransferwiseUser, json_str)
+        return converter.json_to_class(TransferwiseUserApiObject, json_str)
 
 
-class TreeProgress(BunqModel):
+class TreeProgressApiObject(BunqModel):
     """
     See how many trees this user has planted.
     
@@ -45290,13 +45567,13 @@ class TreeProgress(BunqModel):
         """
         :type json_str: str
         
-        :rtype: TreeProgress
+        :rtype: TreeProgressApiObject
         """
 
-        return converter.json_to_class(TreeProgress, json_str)
+        return converter.json_to_class(TreeProgressApiObject, json_str)
 
 
-class UserCompanyName(BunqModel):
+class UserCompanyNameApiObject(BunqModel):
     """
     Endpoint for getting all the known (trade) names for a user company. This is
     needed for updating the user name, as we only accept legal or trade names.
@@ -45362,13 +45639,13 @@ class UserCompanyName(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserCompanyName
+        :rtype: UserCompanyNameApiObject
         """
 
-        return converter.json_to_class(UserCompanyName, json_str)
+        return converter.json_to_class(UserCompanyNameApiObject, json_str)
 
 
-class UserCredentialPasswordIp(BunqModel):
+class UserCredentialPasswordIpApiObject(BunqModel):
     """
     Create a credential of a user for server authentication, or delete the
     credential of a user for server authentication.
@@ -45542,13 +45819,13 @@ class UserCredentialPasswordIp(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserCredentialPasswordIp
+        :rtype: UserCredentialPasswordIpApiObject
         """
 
-        return converter.json_to_class(UserCredentialPasswordIp, json_str)
+        return converter.json_to_class(UserCredentialPasswordIpApiObject, json_str)
 
 
-class UserLegalName(BunqModel):
+class UserLegalNameApiObject(BunqModel):
     """
     Endpoint for getting available legal names that can be used by the user.
     
@@ -45611,13 +45888,13 @@ class UserLegalName(BunqModel):
         """
         :type json_str: str
         
-        :rtype: UserLegalName
+        :rtype: UserLegalNameApiObject
         """
 
-        return converter.json_to_class(UserLegalName, json_str)
+        return converter.json_to_class(UserLegalNameApiObject, json_str)
 
 
-class WhitelistSddOneOff(BunqModel):
+class WhitelistSddOneOffApiObject(BunqModel):
     """
     Whitelist an one off SDD so that when another one off SDD from the creditor
     comes in, it is automatically accepted.
@@ -46010,13 +46287,13 @@ cls.FIELD_ROUTING_TYPE : routing_type
         """
         :type json_str: str
         
-        :rtype: WhitelistSddOneOff
+        :rtype: WhitelistSddOneOffApiObject
         """
 
-        return converter.json_to_class(WhitelistSddOneOff, json_str)
+        return converter.json_to_class(WhitelistSddOneOffApiObject, json_str)
 
 
-class WhitelistSddRecurring(BunqModel):
+class WhitelistSddRecurringApiObject(BunqModel):
     """
     Whitelist a recurring SDD so that when another recurrence comes in, it is
     automatically accepted.
@@ -46423,13 +46700,13 @@ cls.FIELD_ROUTING_TYPE : routing_type
         """
         :type json_str: str
         
-        :rtype: WhitelistSddRecurring
+        :rtype: WhitelistSddRecurringApiObject
         """
 
-        return converter.json_to_class(WhitelistSddRecurring, json_str)
+        return converter.json_to_class(WhitelistSddRecurringApiObject, json_str)
 
 
-class WhitelistSdd(BunqModel):
+class WhitelistSddApiObject(BunqModel):
     """
     Depreciated route, replaced with whitelist-sdd-recurring
     
@@ -46678,13 +46955,13 @@ class WhitelistSdd(BunqModel):
         """
         :type json_str: str
         
-        :rtype: WhitelistSdd
+        :rtype: WhitelistSddApiObject
         """
 
-        return converter.json_to_class(WhitelistSdd, json_str)
+        return converter.json_to_class(WhitelistSddApiObject, json_str)
 
 
-class WhitelistSddMonetaryAccountPaying(BunqModel):
+class WhitelistSddMonetaryAccountPayingApiObject(BunqModel):
     """
     Whitelist an SDD so that when one comes in, it is automatically accepted.
     
@@ -46907,13 +47184,13 @@ class WhitelistSddMonetaryAccountPaying(BunqModel):
         """
         :type json_str: str
         
-        :rtype: WhitelistSddMonetaryAccountPaying
+        :rtype: WhitelistSddMonetaryAccountPayingApiObject
         """
 
-        return converter.json_to_class(WhitelistSddMonetaryAccountPaying, json_str)
+        return converter.json_to_class(WhitelistSddMonetaryAccountPayingApiObject, json_str)
 
 
-class MasterCardPayment(BunqModel):
+class MasterCardPaymentApiObject(BunqModel):
     """
     MasterCard transaction view.
     
@@ -47379,13 +47656,13 @@ class MasterCardPayment(BunqModel):
         """
         :type json_str: str
         
-        :rtype: MasterCardPayment
+        :rtype: MasterCardPaymentApiObject
         """
 
-        return converter.json_to_class(MasterCardPayment, json_str)
+        return converter.json_to_class(MasterCardPaymentApiObject, json_str)
 
 
-class MasterCardIdentityCheckChallengeRequestUser(BunqModel):
+class MasterCardIdentityCheckChallengeRequestUserApiObject(BunqModel):
     """
     Endpoint for apps to fetch a challenge request.
     
@@ -47623,10 +47900,91 @@ cls.FIELD_STATUS : status
         """
         :type json_str: str
         
-        :rtype: MasterCardIdentityCheckChallengeRequestUser
+        :rtype: MasterCardIdentityCheckChallengeRequestUserApiObject
         """
 
-        return converter.json_to_class(MasterCardIdentityCheckChallengeRequestUser, json_str)
+        return converter.json_to_class(MasterCardIdentityCheckChallengeRequestUserApiObject, json_str)
+
+
+class HealthCheckApiObject(BunqModel, AnchorObjectInterface):
+    """
+    Basic health check for uptime and instance health monitoring.
+    
+    :param _HealthResult: 
+    :type _HealthResult: object_.HealthCheckResult
+    """
+
+    # Error constants.
+    _ERROR_NULL_FIELDS = "All fields of an extended model or object are null."
+
+    # Endpoint constants.
+    _ENDPOINT_URL_LISTING = "health-check"
+
+    # Object type.
+    _OBJECT_TYPE_GET = "HealthCheckResult"
+
+    _HealthResult = None
+
+    @classmethod
+    def list(cls, params=None, custom_headers=None):
+        """
+        :type params: dict[str, str]|None
+        :type custom_headers: dict[str, str]|None
+        
+        :rtype: BunqResponseHealthCheckList
+        """
+
+        if params is None:
+            params = {}
+
+        if custom_headers is None:
+            custom_headers = {}
+
+        api_client = ApiClient(cls._get_api_context())
+        endpoint_url = cls._ENDPOINT_URL_LISTING
+        response_raw = api_client.get(endpoint_url, params, custom_headers)
+
+        return BunqResponseHealthCheckList.cast_from_bunq_response(
+            cls._from_json_list(response_raw, cls._OBJECT_TYPE_GET)
+        )
+
+    @property
+    def HealthResult(self):
+        """
+        :rtype: object_.HealthCheckResult
+        """
+
+        return self._HealthResult
+    def get_referenced_object(self):
+        """
+        :rtype: BunqModel
+        :raise: BunqException
+        """
+
+        if self._HealthResult is not None:
+            return self._HealthResult
+
+        raise BunqException(self._ERROR_NULL_FIELDS)
+
+    def is_all_field_none(self):
+        """
+        :rtype: bool
+        """
+
+        if self._HealthResult is not None:
+            return False
+
+        return True
+
+    @staticmethod
+    def from_json(json_str):
+        """
+        :type json_str: str
+        
+        :rtype: HealthCheckApiObject
+        """
+
+        return converter.json_to_class(HealthCheckApiObject, json_str)
     
 class BunqResponseBillingContractSubscriptionList(BunqResponse):
     @property
@@ -50103,6 +50461,16 @@ class BunqResponseMasterCardIdentityCheckChallengeRequestUser(BunqResponse):
     def value(self):
         """
         :rtype: MasterCardIdentityCheckChallengeRequestUser
+        """
+ 
+        return super().value
+
+    
+class BunqResponseHealthCheckList(BunqResponse):
+    @property
+    def value(self):
+        """
+        :rtype: list[HealthCheck]
         """
  
         return super().value

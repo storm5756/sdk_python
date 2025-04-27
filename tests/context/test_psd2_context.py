@@ -5,7 +5,7 @@ from bunq import ApiEnvironmentType
 from bunq.sdk.context.api_context import ApiContext
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.json import converter
-from bunq.sdk.model.generated.endpoint import OauthClient
+from bunq.sdk.model.generated.endpoint import OauthClientApiObject
 from tests.bunq_test import BunqSdkTestCase
 
 class TestPsd2Context(unittest.TestCase):

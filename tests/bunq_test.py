@@ -7,14 +7,14 @@ from bunq.sdk.context.api_context import ApiContext
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.http.api_client import ApiClient
-from bunq.sdk.model.generated.endpoint import MonetaryAccountBank, RequestInquiry, AttachmentPublic, Avatar
-from bunq.sdk.model.generated.object_ import Amount, Pointer
+from bunq.sdk.model.generated.endpoint import MonetaryAccountBankApiObject, RequestInquiryApiObject, AttachmentPublicApiObject, AvatarApiObject
+from bunq.sdk.model.generated.object_ import AmountObject, PointerObject
 from bunq.sdk.util import util
 
 
 class BunqSdkTestCase(unittest.TestCase):
     """
-    :type _second_monetary_account: MonetaryAccountBank
+    :type _second_monetary_account: MonetaryAccountBankApiObject
     """
 
     # Error constants.
@@ -58,25 +58,25 @@ class BunqSdkTestCase(unittest.TestCase):
         BunqContext.user_context().refresh_user_context()
 
     def __set_second_monetary_account(self):
-        response = MonetaryAccountBank.create(
+        response = MonetaryAccountBankApiObject.create(
             self.__CURRENCY_EUR,
             self.__SECOND_MONETARY_ACCOUNT_DESCRIPTION
         )
 
-        self._second_monetary_account = MonetaryAccountBank.get(
+        self._second_monetary_account = MonetaryAccountBankApiObject.get(
             response.value
         ).value
 
     def __request_spending_money(self):
-        RequestInquiry.create(
-            Amount(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
-            Pointer(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
+        RequestInquiryApiObject.create(
+            AmountObject(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
+            PointerObject(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
             self.__REQUEST_SPENDING_DESCRIPTION,
             False
         )
-        RequestInquiry.create(
-            Amount(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
-            Pointer(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
+        RequestInquiryApiObject.create(
+            AmountObject(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
+            PointerObject(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
             self.__REQUEST_SPENDING_DESCRIPTION,
             False,
             self._second_monetary_account.id_
@@ -86,10 +86,10 @@ class BunqSdkTestCase(unittest.TestCase):
     def _get_api_context(cls) -> ApiContext:
         return util.automatic_sandbox_install()
 
-    def _get_pointer_bravo(self) -> Pointer:
-        return Pointer(self._POINTER_EMAIL, self._EMAIL_BRAVO)
+    def _get_pointer_bravo(self) -> PointerObject:
+        return PointerObject(self._POINTER_EMAIL, self._EMAIL_BRAVO)
 
-    def _get_alias_second_account(self) -> Pointer:
+    def _get_alias_second_account(self) -> PointerObject:
         return self._second_monetary_account.alias[self._FIRST_INDEX]
 
     @staticmethod
@@ -107,7 +107,7 @@ class BunqSdkTestCase(unittest.TestCase):
             return file.read()
 
     @property
-    def alias_first(self) -> Pointer:
+    def alias_first(self) -> PointerObject:
         if BunqContext.user_context().is_only_user_company_set():
             return BunqContext.user_context().user_company.alias[self._FIRST_INDEX]
 
