@@ -1,3 +1,4 @@
+import time
 from typing import List, Dict
 
 from bunq import Pagination
@@ -15,6 +16,8 @@ class TestPaginationScenario(BunqSdkTestCase):
         Pagination
     """
 
+    __TIME_OUT_PREVENT_RATE_LIMIT = 2
+
     @classmethod
     def setUpClass(cls):
         cls._PAYMENT_LISTING_PAGE_SIZE = 2
@@ -31,10 +34,15 @@ class TestPaginationScenario(BunqSdkTestCase):
         payments_expected = self._payments_required()
         pagination = Pagination()
         pagination.count = self._PAYMENT_LISTING_PAGE_SIZE
+
+        time.sleep(self.__TIME_OUT_PREVENT_RATE_LIMIT)
         response_latest = self._list_payments(pagination.url_params_count_only)
         pagination_latest = response_latest.pagination
+
+        time.sleep(self.__TIME_OUT_PREVENT_RATE_LIMIT)
         response_previous = self._list_payments(pagination_latest.url_params_previous_page)
         pagination_previous = response_previous.pagination
+
         response_previous_next = self._list_payments(pagination_previous.url_params_next_page)
         payments_previous = response_previous.value
         payments_previous_next = response_previous_next.value

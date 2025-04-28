@@ -79,8 +79,8 @@ bunq_sdk.egg-info
 .idea/codeStyles/
 venv
 
-tests/assets/bunq-oauth-psd2-test.conf
-tests/assets/bunq-psd2-test.conf
-tests/assets/key.pem
-tests/assets/certificate.pem
+tests/bunq-oauth-psd2-test.conf
+tests/bunq-psd2-test.conf
+tests/key.pem
+tests/certificate.pem
 

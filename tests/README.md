@@ -10,6 +10,11 @@ common scenarios can run without any errors.
 
 ## Installation and Execution
 
+openssl req -x509 -newkey rsa:4096 -keyout tests/key.pem -out tests/certificate.pem -days 365 -nodes -subj "/CN=adsadsahjksbhjbdjhasds/C=NL" && \
+echo -e "\n--- KEY ---\n" && cat tests/key.pem && \
+echo -e "\n--- CERTIFICATE ---\n" && cat tests/certificate.pem
+
+
 You can install all the required dependencies with the following command:
 
     python3 setup.py install

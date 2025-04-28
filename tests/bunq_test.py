@@ -43,7 +43,7 @@ class BunqSdkTestCase(unittest.TestCase):
 
     _EMAIL_BRAVO = 'bravo@bunq.com'
 
-    __TIME_OUT_AUTO_ACCEPT_SPENDING_MONEY = 0.5
+    __TIME_OUT_AUTO_ACCEPT_SPENDING_MONEY = 2
 
     _second_monetary_account = None
 
