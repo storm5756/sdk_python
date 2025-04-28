@@ -17,8 +17,8 @@ class TestPsd2Context(unittest.TestCase):
     _FILE_TEST_CONFIGURATION = '/assets/bunq-psd2-test.conf'
     _FILE_TEST_OAUTH = '/assets/bunq-oauth-psd2-test.conf'
 
-    _FILE_TEST_CERTIFICATE = '/assets/cert.pem'
-    _FILE_TEST_CERTIFICATE_CHAIN = '/assets/certChain.pem'
+    _FILE_TEST_CERTIFICATE = '/assets/certificate.pem'
+    _FILE_TEST_CERTIFICATE_CHAIN = '/assets/certificate.pem'
     _FILE_TEST_PRIVATE_KEY = '/assets/key.pem'
 
     _TEST_DEVICE_DESCRIPTION = 'PSD2TestDevice'

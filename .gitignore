@@ -81,3 +81,6 @@ venv
 
 tests/assets/bunq-oauth-psd2-test.conf
 tests/assets/bunq-psd2-test.conf
+tests/assets/key.pem
+tests/assets/certificate.pem
+
