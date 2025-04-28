@@ -250,10 +250,12 @@ class JsonAdapter(Generic[T]):
         """
         :raise: BunqException when could not find the class for the string.
         """
+        # First try: direct attribute lookup by name
         if cls._DELIMITER_MODULE not in string:
             if hasattr(module_, string):
                 return getattr(module_, string)
 
+            # Second try: check for naming conventions based on module type
             if "object_" in module_.__name__:
                 obj_name = string + "Object"
                 if hasattr(module_, obj_name):
@@ -270,14 +272,18 @@ class JsonAdapter(Generic[T]):
             error_message = cls._ERROR_COULD_NOT_FIND_CLASS.format(string)
             raise BunqException(error_message)
 
+        # Handle module.class notation using delimiter
         module_name_short, class_name = string.split(cls._DELIMITER_MODULE)
         members = inspect.getmembers(module_, inspect.ismodule)
 
+        # Search through submodules for the class
         for name, module_member in members:
             if module_name_short == name:
+                # Try direct class lookup first
                 if hasattr(module_member, class_name):
                     return getattr(module_member, class_name)
 
+                # Try to find object via naming conventions
                 if "object_" in module_member.__name__:
                     obj_name = class_name + "Object"
                     if hasattr(module_member, obj_name):

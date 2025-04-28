@@ -141,12 +141,10 @@ class BunqModel:
 
     @classmethod
     def _remove_field_for_request(cls, json_str: str) -> str:
-        result = json_str.replace(
+        return json_str.replace(
             cls.__STRING_FORMAT_FIELD_FOR_REQUEST_TWO_UNDERSCORE,
             cls.__STRING_FORMAT_EMPTY
         ).replace(
             cls.__STRING_FORMAT_FIELD_FOR_REQUEST_ONE_UNDERSCORE,
             cls.__STRING_FORMAT_EMPTY
         )
-
-        return result
