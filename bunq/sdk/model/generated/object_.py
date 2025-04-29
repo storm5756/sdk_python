@@ -6659,10 +6659,17 @@ class TransferwiseRequirementFieldGroupValuesAllowedObject(BunqModel):
         :rtype: TransferwiseRequirementFieldGroupValuesAllowedObject
         """
 
+<<<<<<< HEAD
         return converter.json_to_class(TransferwiseRequirementFieldGroupValuesAllowedObject, json_str)
 
 
 class HealthCheckResultObject(BunqModel):
+=======
+        return converter.json_to_class(TransferwiseRequirementFieldGroupValuesAllowed, json_str)
+
+
+class HealthCheckResult(BunqModel):
+>>>>>>> upstream/develop
     """
     :param _status: The result status of the health check.
     :type _status: str
@@ -6707,6 +6714,7 @@ class HealthCheckResultObject(BunqModel):
         """
         :type json_str: str
         
+<<<<<<< HEAD
         :rtype: HealthCheckResultObject
         """
 
@@ -6714,6 +6722,15 @@ class HealthCheckResultObject(BunqModel):
 
 
 class HealthCheckResultEntryObject(BunqModel):
+=======
+        :rtype: HealthCheckResult
+        """
+
+        return converter.json_to_class(HealthCheckResult, json_str)
+
+
+class HealthCheckResultEntry(BunqModel):
+>>>>>>> upstream/develop
     """
     :param _type_: The type of HealthCheckResultEntry.
     :type _type_: str
@@ -6758,10 +6775,17 @@ class HealthCheckResultEntryObject(BunqModel):
         """
         :type json_str: str
         
+<<<<<<< HEAD
         :rtype: HealthCheckResultEntryObject
         """
 
         return converter.json_to_class(HealthCheckResultEntryObject, json_str)
+=======
+        :rtype: HealthCheckResultEntry
+        """
+
+        return converter.json_to_class(HealthCheckResultEntry, json_str)
+>>>>>>> upstream/develop
 class MonetaryAccountReference(BunqModel):
     """
     :type pointer: PointerObject

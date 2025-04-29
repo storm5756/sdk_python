@@ -47903,10 +47903,17 @@ cls.FIELD_STATUS : status
         :rtype: MasterCardIdentityCheckChallengeRequestUserApiObject
         """
 
+<<<<<<< HEAD
         return converter.json_to_class(MasterCardIdentityCheckChallengeRequestUserApiObject, json_str)
 
 
 class HealthCheckApiObject(BunqModel, AnchorObjectInterface):
+=======
+        return converter.json_to_class(MasterCardIdentityCheckChallengeRequestUser, json_str)
+
+
+class HealthCheck(BunqModel, AnchorObjectInterface):
+>>>>>>> upstream/develop
     """
     Basic health check for uptime and instance health monitoring.
     
@@ -47981,10 +47988,17 @@ class HealthCheckApiObject(BunqModel, AnchorObjectInterface):
         """
         :type json_str: str
         
+<<<<<<< HEAD
         :rtype: HealthCheckApiObject
         """
 
         return converter.json_to_class(HealthCheckApiObject, json_str)
+=======
+        :rtype: HealthCheck
+        """
+
+        return converter.json_to_class(HealthCheck, json_str)
+>>>>>>> upstream/develop
     
 class BunqResponseBillingContractSubscriptionList(BunqResponse):
     @property
