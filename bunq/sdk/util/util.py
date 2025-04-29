@@ -8,7 +8,7 @@ import requests
 from bunq.sdk.context.api_context import ApiContext, ApiEnvironmentType
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.http.api_client import ApiClient
-from bunq.sdk.model.generated.endpoint import SandboxUserPerson
+from bunq.sdk.model.generated.endpoint import SandboxUserPersonApiObject
 
 __UNIQUE_REQUEST_ID = "uniqueness-is-required"
 __FIELD_API_KEY = "ApiKey"
@@ -27,7 +27,7 @@ def automatic_sandbox_install() -> ApiContext:
     return ApiContext.create(ApiEnvironmentType.SANDBOX, sandbox_user.api_key, socket.gethostname())
 
 
-def __generate_new_sandbox_user() -> SandboxUserPerson:
+def __generate_new_sandbox_user() -> SandboxUserPersonApiObject:
     url = ApiEnvironmentType.SANDBOX.uri_base + __ENDPOINT_SANDBOX_USER_PERSON
 
     headers = {
@@ -43,6 +43,6 @@ def __generate_new_sandbox_user() -> SandboxUserPerson:
     if response.status_code is ApiClient.STATUS_CODE_OK:
         response_json = json.loads(response.text)
 
-        return SandboxUserPerson.from_json(json.dumps(response_json[__FIELD_RESPONSE][__INDEX_FIRST][__FIELD_API_KEY]))
+        return SandboxUserPersonApiObject.from_json(json.dumps(response_json[__FIELD_RESPONSE][__INDEX_FIRST][__FIELD_API_KEY]))
 
     raise BunqException(_ERROR_COULD_NOT_CREATE_NEW_SANDBOX_USER)

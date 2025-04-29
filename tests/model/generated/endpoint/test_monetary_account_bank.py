@@ -8,7 +8,7 @@ except ImportError:
         """ Function to replace import for Python < 3.6. """
         return urandom(16).hex()
 
-from bunq.sdk.model.generated.endpoint import MonetaryAccountBank
+from bunq.sdk.model.generated.endpoint import MonetaryAccountBankApiObject
 from tests.bunq_test import BunqSdkTestCase
 
 
@@ -34,12 +34,12 @@ class TestMonetaryAccount(BunqSdkTestCase):
         without errors
         """
 
-        monetary_account_id = MonetaryAccountBank.create(
+        monetary_account_id = MonetaryAccountBankApiObject.create(
             self._CURRENCY,
             self._MONETARY_ACCOUNT_PREFIX + token_hex()
         ).value
 
-        MonetaryAccountBank.update(monetary_account_id,
+        MonetaryAccountBankApiObject.update(monetary_account_id,
                                    status=self._STATUS,
                                    sub_status=self._SUB_STATUS,
                                    reason=self._REASON,

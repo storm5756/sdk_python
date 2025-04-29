@@ -5,9 +5,8 @@ from bunq import ApiEnvironmentType
 from bunq.sdk.context.api_context import ApiContext
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.json import converter
-from bunq.sdk.model.generated.endpoint import OauthClient
+from bunq.sdk.model.generated.endpoint import OauthClientApiObject
 from tests.bunq_test import BunqSdkTestCase
-
 
 class TestPsd2Context(unittest.TestCase):
     """
@@ -15,12 +14,12 @@ class TestPsd2Context(unittest.TestCase):
         Psd2Context
     """
 
-    _FILE_TEST_CONFIGURATION = '/assets/bunq-psd2-test.conf'
-    _FILE_TEST_OAUTH = '/assets/bunq-oauth-psd2-test.conf'
+    _FILE_TEST_CONFIGURATION = '/bunq-psd2-test.conf'
+    _FILE_TEST_OAUTH = '/bunq-oauth-psd2-test.conf'
 
-    _FILE_TEST_CERTIFICATE = '/assets/cert.pem'
-    _FILE_TEST_CERTIFICATE_CHAIN = '/assets/cert.pem'
-    _FILE_TEST_PRIVATE_KEY = '/assets/key.pem'
+    _FILE_TEST_CERTIFICATE = '/certificate.pem'
+    _FILE_TEST_CERTIFICATE_CHAIN = '/certificate.pem'
+    _FILE_TEST_PRIVATE_KEY = '/key.pem'
 
     _TEST_DEVICE_DESCRIPTION = 'PSD2TestDevice'
 
@@ -73,8 +72,8 @@ class TestPsd2Context(unittest.TestCase):
             return
 
         try:
-            client_id = OauthClient.create().value
-            oauth_client = OauthClient.get(client_id).value
+            client_id = OauthClientApiObject.create().value
+            oauth_client = OauthClientApiObject.get(client_id).value
 
             self.assertIsNotNone(oauth_client)
 

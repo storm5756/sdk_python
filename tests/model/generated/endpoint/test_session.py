@@ -1,14 +1,14 @@
 import time
 
 from bunq.sdk.context.bunq_context import BunqContext
-from bunq.sdk.model.generated.endpoint import Session
+from bunq.sdk.model.generated.endpoint import SessionApiObject
 from tests.bunq_test import BunqSdkTestCase
 
 
 class TestSession(BunqSdkTestCase):
     """
     Tests:
-        Session
+        SessionApiObject
     """
 
     _SESSION_ID = 0
@@ -28,7 +28,7 @@ class TestSession(BunqSdkTestCase):
             Session endpoint per second.
         """
 
-        Session.delete(self._SESSION_ID)
+        SessionApiObject.delete(self._SESSION_ID)
         time.sleep(2)
         BunqContext.api_context().reset_session()
         BunqContext.api_context().save(self._BUNQ_CONFIG_FILE)

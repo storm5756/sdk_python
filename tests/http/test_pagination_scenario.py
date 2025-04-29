@@ -1,11 +1,12 @@
+import time
 from typing import List, Dict
 
 from bunq import Pagination
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.http.bunq_response import BunqResponse
 from bunq.sdk.json import converter
-from bunq.sdk.model.generated.endpoint import Payment
-from bunq.sdk.model.generated.object_ import Amount
+from bunq.sdk.model.generated.endpoint import PaymentApiObject
+from bunq.sdk.model.generated.object_ import AmountObject
 from tests.bunq_test import BunqSdkTestCase
 
 
@@ -14,6 +15,8 @@ class TestPaginationScenario(BunqSdkTestCase):
     Tests:
         Pagination
     """
+
+    __TIME_OUT_PREVENT_RATE_LIMIT = 2
 
     @classmethod
     def setUpClass(cls):
@@ -31,10 +34,15 @@ class TestPaginationScenario(BunqSdkTestCase):
         payments_expected = self._payments_required()
         pagination = Pagination()
         pagination.count = self._PAYMENT_LISTING_PAGE_SIZE
+
+        time.sleep(self.__TIME_OUT_PREVENT_RATE_LIMIT)
         response_latest = self._list_payments(pagination.url_params_count_only)
         pagination_latest = response_latest.pagination
+
+        time.sleep(self.__TIME_OUT_PREVENT_RATE_LIMIT)
         response_previous = self._list_payments(pagination_latest.url_params_previous_page)
         pagination_previous = response_previous.pagination
+
         response_previous_next = self._list_payments(pagination_previous.url_params_next_page)
         payments_previous = response_previous.value
         payments_previous_next = response_previous_next.value
@@ -52,19 +60,19 @@ class TestPaginationScenario(BunqSdkTestCase):
     def _payment_missing_count(self) -> int:
         return self._PAYMENT_REQUIRED_COUNT_MINIMUM - len(self._payments_required())
 
-    def _payments_required(self) -> List[Payment]:
+    def _payments_required(self) -> List[PaymentApiObject]:
         pagination = Pagination()
         pagination.count = self._PAYMENT_REQUIRED_COUNT_MINIMUM
 
         return self._list_payments(pagination.url_params_count_only).value
 
     @staticmethod
-    def _list_payments(params: Dict[str, str]) -> BunqResponse[List[Payment]]:
-        return Payment.list(params=params)
+    def _list_payments(params: Dict[str, str]) -> BunqResponse[List[PaymentApiObject]]:
+        return PaymentApiObject.list(params=params)
 
     def _create_payment(self) -> None:
-        Payment.create(
-            Amount(self._PAYMENT_AMOUNT_EUR, self._PAYMENT_CURRENCY),
+        PaymentApiObject.create(
+            AmountObject(self._PAYMENT_AMOUNT_EUR, self._PAYMENT_CURRENCY),
             self._get_pointer_bravo(),
             self._PAYMENT_DESCRIPTION
         )

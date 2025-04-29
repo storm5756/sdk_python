@@ -5,10 +5,10 @@ from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.http.api_client import ApiClient
 from bunq.sdk.json import converter
 from bunq.sdk.model.generated.endpoint import BunqResponseInt
-from bunq.sdk.model.generated.endpoint import DeviceServer
+from bunq.sdk.model.generated.endpoint import DeviceServerApiObject
 
 
-class DeviceServerInternal(DeviceServer):
+class DeviceServerInternal(DeviceServerApiObject):
     _ERROR_API_CONTEXT_IS_NULL = 'ApiContext should not be None, use the generated class instead.'
 
     @classmethod

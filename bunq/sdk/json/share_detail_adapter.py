@@ -1,8 +1,8 @@
 from typing import Dict, Type, Optional
 
 from bunq.sdk.json import converter
-from bunq.sdk.model.generated.object_ import ShareDetail, ShareDetailPayment, ShareDetailReadOnly, \
-    ShareDetailDraftPayment
+from bunq.sdk.model.generated.object_ import ShareDetailObject, ShareDetailPaymentObject, ShareDetailReadOnlyObject, \
+    ShareDetailDraftPaymentObject
 
 
 class ShareDetailAdapter(converter.JsonAdapter):
@@ -18,8 +18,8 @@ class ShareDetailAdapter(converter.JsonAdapter):
 
     @classmethod
     def deserialize(cls,
-                    target_class: Type[ShareDetail],
-                    obj: Dict) -> ShareDetail:
+                    target_class: Type[ShareDetailObject],
+                    obj: Dict) -> ShareDetailObject:
         """
         :type target_class: ShareDetail|type
         :type obj: dict
@@ -30,15 +30,15 @@ class ShareDetailAdapter(converter.JsonAdapter):
         share_detail = target_class.__new__(target_class)
         share_detail.__dict__ = {
             cls._ATTRIBUTE_PAYMENT: converter.deserialize(
-                ShareDetailPayment,
+                ShareDetailPaymentObject,
                 cls._get_field_or_none(cls._FIELD_DRAFT_PAYMENT, obj)
             ),
             cls._ATTRIBUTE_READ_ONLY: converter.deserialize(
-                ShareDetailReadOnly,
+                ShareDetailReadOnlyObject,
                 cls._get_field_or_none(cls._FIELD_READ_ONLY, obj)
             ),
             cls._ATTRIBUTE_DRAFT_PAYMENT: converter.deserialize(
-                ShareDetailDraftPayment,
+                ShareDetailDraftPaymentObject,
                 cls._get_field_or_none(cls._FIELD_DRAFT_PAYMENT, obj)
             ),
         }
@@ -50,7 +50,7 @@ class ShareDetailAdapter(converter.JsonAdapter):
         return obj[field] if field in obj else None
 
     @classmethod
-    def serialize(cls, share_detail: ShareDetail) -> Dict:
+    def serialize(cls, share_detail: ShareDetailObject) -> Dict:
         return {
             cls._FIELD_PAYMENT: converter.serialize(
                 share_detail._payment_field_for_request),

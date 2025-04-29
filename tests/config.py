@@ -17,7 +17,6 @@ class Config:
     _FIELD_TYPE = "Type"
     _FIELD_ALIAS = "Alias"
     _FIELD_TAB_USAGE = "TabUsageSingleTest"
-    _FIELD_CASH_REGISTER_ID = "CASH_REGISTER_ID"
     _FIELD_MONETARY_ACCOUNT_ID_1 = "MONETARY_ACCOUNT_ID"
     _FIELD_MONETARY_ACCOUNT_ID_2 = "MONETARY_ACCOUNT_ID2"
     _FIELD_USER_ID = "USER_ID"
@@ -54,10 +53,6 @@ class Config:
     @classmethod
     def get_monetary_account_id_1(cls) -> int:
         return int(cls._get_config_file()[cls._FIELD_MONETARY_ACCOUNT_ID_1])
-
-    @classmethod
-    def get_cash_register_id(cls) -> str:
-        return cls._get_config_file()[cls._FIELD_TAB_USAGE][cls._FIELD_CASH_REGISTER_ID]
 
     @classmethod
     def get_pointer_counter_party_self(cls) -> Pointer:

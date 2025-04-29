@@ -10,17 +10,17 @@ from bunq.sdk.json import converter
 from bunq.sdk.model.core.bunq_model import BunqModel
 from bunq.sdk.model.core.id import Id
 from bunq.sdk.model.core.session_token import SessionToken
-from bunq.sdk.model.generated.endpoint import UserPerson, UserCompany, UserApiKey, UserPaymentServiceProvider
+from bunq.sdk.model.generated.endpoint import UserPersonApiObject, UserCompanyApiObject, UserApiKeyApiObject, UserPaymentServiceProviderApiObject
 
 
 class SessionServer(BunqModel):
     """
     :type _id_: Id|None
     :type _token: SessionToken|None
-    :type _user_person: UserPerson|None
-    :type _user_company: UserCompany|None
-    :type _user_api_key: UserApiKey|None
-    :type _user_payment_service_provider: UserPaymentServiceProvider|None
+    :type _user_person: UserPersonApiObject|None
+    :type _user_company: UserCompanyApiObject|None
+    :type _user_api_key: UserApiKeyApiObject|None
+    :type _user_payment_service_provider: UserPaymentServiceProviderApiObject|None
     """
 
     # Endpoint name.
@@ -41,19 +41,19 @@ class SessionServer(BunqModel):
         return self._token
 
     @property
-    def user_person(self) -> Optional[UserPerson]:
+    def user_person(self) -> Optional[UserPersonApiObject]:
         return self._user_person
 
     @property
-    def user_company(self) -> Optional[UserCompany]:
+    def user_company(self) -> Optional[UserCompanyApiObject]:
         return self._user_company
 
     @property
-    def user_api_key(self) -> Optional[UserApiKey]:
+    def user_api_key(self) -> Optional[UserApiKeyApiObject]:
         return self._user_api_key
 
     @property
-    def user_payment_service_provider(self) -> Optional[UserPaymentServiceProvider]:
+    def user_payment_service_provider(self) -> Optional[UserPaymentServiceProviderApiObject]:
         return self._user_payment_service_provider
 
     def __init__(self) -> None:

@@ -7,16 +7,14 @@ from bunq.sdk.context.api_context import ApiContext
 from bunq.sdk.context.bunq_context import BunqContext
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.http.api_client import ApiClient
-from bunq.sdk.model.generated.endpoint import MonetaryAccountBank, RequestInquiry, AttachmentPublic, Avatar, \
-    CashRegister
-from bunq.sdk.model.generated.object_ import Amount, Pointer
+from bunq.sdk.model.generated.endpoint import MonetaryAccountBankApiObject, RequestInquiryApiObject, AttachmentPublicApiObject, AvatarApiObject
+from bunq.sdk.model.generated.object_ import AmountObject, PointerObject
 from bunq.sdk.util import util
 
 
 class BunqSdkTestCase(unittest.TestCase):
     """
-    :type _second_monetary_account: MonetaryAccountBank
-    :type _cash_register: CashRegister
+    :type _second_monetary_account: MonetaryAccountBankApiObject
     """
 
     # Error constants.
@@ -41,17 +39,13 @@ class BunqSdkTestCase(unittest.TestCase):
     __SPENDING_MONEY_RECIPIENT = 'sugardaddy@bunq.com'
     __REQUEST_SPENDING_DESCRIPTION = 'sdk  python test, thanks daddy <3'
 
-    __CASH_REGISTER_STATUS = 'PENDING_APPROVAL'
-    __CASH_REGISTER_DESCRIPTION = 'python test cash register'
-
     __SECOND_MONETARY_ACCOUNT_DESCRIPTION = 'test account python'
 
     _EMAIL_BRAVO = 'bravo@bunq.com'
 
-    __TIME_OUT_AUTO_ACCEPT_SPENDING_MONEY = 0.5
+    __TIME_OUT_AUTO_ACCEPT_SPENDING_MONEY = 2
 
     _second_monetary_account = None
-    _cash_register = None
 
     @classmethod
     def setUpClass(cls):
@@ -64,66 +58,43 @@ class BunqSdkTestCase(unittest.TestCase):
         BunqContext.user_context().refresh_user_context()
 
     def __set_second_monetary_account(self):
-        response = MonetaryAccountBank.create(
+        response = MonetaryAccountBankApiObject.create(
             self.__CURRENCY_EUR,
             self.__SECOND_MONETARY_ACCOUNT_DESCRIPTION
         )
 
-        self._second_monetary_account = MonetaryAccountBank.get(
+        self._second_monetary_account = MonetaryAccountBankApiObject.get(
             response.value
         ).value
 
     def __request_spending_money(self):
-        RequestInquiry.create(
-            Amount(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
-            Pointer(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
+        RequestInquiryApiObject.create(
+            AmountObject(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
+            PointerObject(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
             self.__REQUEST_SPENDING_DESCRIPTION,
             False
         )
-        RequestInquiry.create(
-            Amount(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
-            Pointer(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
+        RequestInquiryApiObject.create(
+            AmountObject(self.__SPENDING_MONEY_AMOUNT, self.__CURRENCY_EUR),
+            PointerObject(self._POINTER_EMAIL, self.__SPENDING_MONEY_RECIPIENT),
             self.__REQUEST_SPENDING_DESCRIPTION,
             False,
             self._second_monetary_account.id_
         )
 
-    def _get_cash_register_id(self):
-        if self._cash_register is None:
-            self._set_cash_register()
-
-        return self._cash_register.id_
-
     @classmethod
     def _get_api_context(cls) -> ApiContext:
         return util.automatic_sandbox_install()
 
-    def _get_pointer_bravo(self) -> Pointer:
-        return Pointer(self._POINTER_EMAIL, self._EMAIL_BRAVO)
+    def _get_pointer_bravo(self) -> PointerObject:
+        return PointerObject(self._POINTER_EMAIL, self._EMAIL_BRAVO)
 
-    def _get_alias_second_account(self) -> Pointer:
+    def _get_alias_second_account(self) -> PointerObject:
         return self._second_monetary_account.alias[self._FIRST_INDEX]
 
     @staticmethod
     def _get_directory_test_root():
         return os.path.dirname(os.path.abspath(__file__))
-
-    def _set_cash_register(self):
-        attachment_uuid = AttachmentPublic.create(
-            self._attachment_contents,
-            {
-                ApiClient.HEADER_CONTENT_TYPE: self._CONTENT_TYPE,
-                ApiClient.HEADER_ATTACHMENT_DESCRIPTION: self._ATTACHMENT_DESCRIPTION,
-            }
-        )
-        avatar_uuid = Avatar.create(attachment_uuid.value)
-        cash_register_id = CashRegister.create(
-            self.__CASH_REGISTER_DESCRIPTION,
-            self.__CASH_REGISTER_STATUS,
-            avatar_uuid.value
-        )
-
-        self._cash_register = CashRegister.get(cash_register_id.value)
 
     @property
     def _attachment_contents(self) -> AnyStr:
@@ -136,7 +107,7 @@ class BunqSdkTestCase(unittest.TestCase):
             return file.read()
 
     @property
-    def alias_first(self) -> Pointer:
+    def alias_first(self) -> PointerObject:
         if BunqContext.user_context().is_only_user_company_set():
             return BunqContext.user_context().user_company.alias[self._FIRST_INDEX]
 

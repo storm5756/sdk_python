@@ -1,7 +1,7 @@
 from typing import Type, Dict
 
 from bunq.sdk.json import converter
-from bunq.sdk.model.generated.object_ import Geolocation
+from bunq.sdk.model.generated.object_ import GeolocationObject
 
 
 class GeolocationAdapter(converter.JsonAdapter):
@@ -27,7 +27,7 @@ class GeolocationAdapter(converter.JsonAdapter):
         raise NotImplementedError()
 
     @classmethod
-    def serialize(cls, geolocation: Geolocation) -> Dict:
+    def serialize(cls, geolocation: GeolocationObject) -> Dict:
         obj = {}
 
         cls.add_if_not_none(obj, cls._FIELD_LATITUDE, geolocation.latitude)

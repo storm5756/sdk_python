@@ -6,7 +6,7 @@ from typing import Optional
 from bunq.sdk.exception.bunq_exception import BunqException
 from bunq.sdk.model.core.bunq_model import BunqModel
 from bunq.sdk.model.core.session_token import SessionToken
-from bunq.sdk.model.generated.endpoint import UserPerson, UserCompany, UserApiKey, UserPaymentServiceProvider
+from bunq.sdk.model.generated.endpoint import UserPersonApiObject, UserCompanyApiObject, UserApiKeyApiObject, UserPaymentServiceProviderApiObject
 
 
 class SessionContext:
@@ -14,10 +14,10 @@ class SessionContext:
     :type _token: str
     :type _expiry_time: datetime.datetime
     :type _user_id: int
-    :type _user_person: UserPerson|None
-    :type _user_company: UserCompany|None
-    :type _user_api_key: UserApiKey|None
-    :type _user_payment_service_provider: UserPaymentServiceProvider|None
+    :type _user_person: UserPersonApiObject|None
+    :type _user_company: UserCompanyApiObject|None
+    :type _user_api_key: UserApiKeyApiObject|None
+    :type _user_payment_service_provider: UserPaymentServiceProviderApiObject|None
     """
 
     # Error constants
@@ -37,19 +37,19 @@ class SessionContext:
         return self._user_id
 
     @property
-    def user_person(self) -> Optional[UserPerson]:
+    def user_person(self) -> Optional[UserPersonApiObject]:
         return self._user_person
 
     @property
-    def user_company(self) -> Optional[UserCompany]:
+    def user_company(self) -> Optional[UserCompanyApiObject]:
         return self._user_company
 
     @property
-    def user_api_key(self) -> Optional[UserApiKey]:
+    def user_api_key(self) -> Optional[UserApiKeyApiObject]:
         return self._user_api_key
 
     @property
-    def user_payment_service_provider(self) -> Optional[UserPaymentServiceProvider]:
+    def user_payment_service_provider(self) -> Optional[UserPaymentServiceProviderApiObject]:
         return self._user_payment_service_provider
 
     def __init__(self, token: SessionToken, expiry_time: datetime.datetime, user: BunqModel) -> None:
@@ -63,28 +63,28 @@ class SessionContext:
         self.__set_user(user)
 
     def __get_user_id(self, user: BunqModel) -> int:
-        if isinstance(user, UserPerson):
+        if isinstance(user, UserPersonApiObject):
             return user.id_
 
-        if isinstance(user, UserCompany):
+        if isinstance(user, UserCompanyApiObject):
             return user.id_
 
-        if isinstance(user, UserApiKey):
+        if isinstance(user, UserApiKeyApiObject):
             return user.id_
 
-        if isinstance(user, UserPaymentServiceProvider):
+        if isinstance(user, UserPaymentServiceProviderApiObject):
             return user.id_
 
         raise BunqException(self._ERROR_UNEXPECTED_USER_INSTANCE)
 
     def __set_user(self, user: BunqModel):
-        if isinstance(user, UserPerson):
+        if isinstance(user, UserPersonApiObject):
             self._user_person = user
-        elif isinstance(user, UserCompany):
+        elif isinstance(user, UserCompanyApiObject):
             self._user_company = user
-        elif isinstance(user, UserApiKey):
+        elif isinstance(user, UserApiKeyApiObject):
             self._user_api_key = user
-        elif isinstance(user, UserPaymentServiceProvider):
+        elif isinstance(user, UserPaymentServiceProviderApiObject):
             self._user_payment_service_provider = user
         else:
             raise BunqException(self._ERROR_UNEXPECTED_USER_INSTANCE)

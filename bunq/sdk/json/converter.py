@@ -161,8 +161,6 @@ class JsonAdapter(Generic[T]):
 
             if value_specs is not None:
                 dict_deserialized[value_specs.name] = cls._deserialize_value(value_specs.types, dict_[key])
-            else:
-                cls._warn_key_unknown(cls_context, key)
 
         return dict_deserialized
 
@@ -250,19 +248,53 @@ class JsonAdapter(Generic[T]):
                                         module_: ModuleType,
                                         string: str) -> Type[T]:
         """
-
         :raise: BunqException when could not find the class for the string.
         """
+        # First try: direct attribute lookup by name
+        if cls._DELIMITER_MODULE not in string:
+            if hasattr(module_, string):
+                return getattr(module_, string)
 
+            # Second try: check for naming conventions based on module type
+            if "object_" in module_.__name__:
+                obj_name = string + "Object"
+                if hasattr(module_, obj_name):
+                    return getattr(module_, obj_name)
+            elif "endpoint" in module_.__name__:
+                api_name = string + "ApiObject"
+                if hasattr(module_, api_name):
+                    return getattr(module_, api_name)
+            else:
+                api_name = string + "ApiObject"
+                if hasattr(module_, api_name):
+                    return getattr(module_, api_name)
+
+            error_message = cls._ERROR_COULD_NOT_FIND_CLASS.format(string)
+            raise BunqException(error_message)
+
+        # Handle module.class notation using delimiter
         module_name_short, class_name = string.split(cls._DELIMITER_MODULE)
         members = inspect.getmembers(module_, inspect.ismodule)
 
+        # Search through submodules for the class
         for name, module_member in members:
             if module_name_short == name:
-                return getattr(module_member, class_name)
+                # Try direct class lookup first
+                if hasattr(module_member, class_name):
+                    return getattr(module_member, class_name)
+
+                # Try to find object via naming conventions
+                if "object_" in module_member.__name__:
+                    obj_name = class_name + "Object"
+                    if hasattr(module_member, obj_name):
+                        return getattr(module_member, obj_name)
+
+                if "endpoint" in module_member.__name__:
+                    api_name = class_name + "ApiObject"
+                    if hasattr(module_member, api_name):
+                        return getattr(module_member, api_name)
 
         error_message = cls._ERROR_COULD_NOT_FIND_CLASS.format(string)
-
         raise BunqException(error_message)
 
     @classmethod
@@ -285,13 +317,6 @@ class JsonAdapter(Generic[T]):
             list_deserialized.append(item_deserialized)
 
         return list_deserialized
-
-    @classmethod
-    def _warn_key_unknown(cls,
-                          cls_context: Type[T],
-                          key: str) -> None:
-        context_name = cls_context.__name__
-        warnings.warn(cls._WARNING_KEY_UNKNOWN.format(key, context_name))
 
     @classmethod
     def _fill_default_values(cls,
